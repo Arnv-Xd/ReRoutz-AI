@@ -1,0 +1,34 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      # Supabase credentials for audit logging.
+      # Set these in a .env file 
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+    volumes:
+      - ./backend/Data:/app/Data
+      - ./backend/model_artifacts:/app/model_artifacts
+    networks:
+      - ReRoutz-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: /api
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    networks:
+      - ReRoutz-net
+
+networks:
+  ReRoutz-net:
+    driver: bridge
