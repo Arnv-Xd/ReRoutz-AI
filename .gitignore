@@ -1,0 +1,13 @@
+**/__pycache__/
+frontend/node_modules/
+frontend/dist/
+.env
+
+# Local leftovers from the pre-integration layout.
+ReRoutz-frontend/
+/Data/
+/model_artifacts/
+/processed_data.csv
+/venv/
+/cache/
+/prompts/
