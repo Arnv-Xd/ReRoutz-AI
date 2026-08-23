@@ -1,0 +1,14 @@
+# osmnx pulls in geopandas/shapely and may need GDAL on non-Docker systems.
+# Debian/Ubuntu packages: libgdal-dev gdal-bin
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pandas==2.2.3
+numpy==2.2.1
+scikit-learn==1.6.0
+joblib==1.4.2
+osmnx==2.0.1
+networkx==3.4.2
+holidays==0.63
+haversine==2.9.0
+supabase==2.16.0

@@ -1,0 +1,370 @@
+{
+  "feature_columns_used": [
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "month",
+    "peak_hour_flag",
+    "is_night",
+    "is_holiday",
+    "event_window_code",
+    "distance_to_nearest_junction_km",
+    "distance_to_nearest_corridor_km",
+    "is_major_corridor",
+    "event_path_distance_km",
+    "contains_water",
+    "contains_tree",
+    "contains_accident",
+    "contains_rally",
+    "contains_breakdown",
+    "contains_pothole",
+    "contains_closure",
+    "event_type_encoded",
+    "event_cause_encoded",
+    "priority_encoded",
+    "veh_type_encoded",
+    "corridor_encoded",
+    "junction_encoded",
+    "zone_encoded",
+    "requires_road_closure",
+    "affected_radius",
+    "severity_encoded",
+    "safe_corridor_avg_duration",
+    "safe_corridor_avg_severity",
+    "safe_corridor_avg_impact",
+    "safe_corridor_event_frequency",
+    "safe_corridor_rolling_impact_30d",
+    "safe_junction_avg_duration",
+    "safe_junction_avg_severity",
+    "safe_junction_avg_impact",
+    "safe_junction_event_frequency",
+    "safe_junction_rolling_impact_30d",
+    "safe_location_cluster_avg_duration",
+    "safe_location_cluster_avg_severity",
+    "safe_location_cluster_avg_impact",
+    "safe_location_cluster_event_frequency",
+    "safe_location_cluster_rolling_impact_30d",
+    "tfidf_safe_accident",
+    "tfidf_safe_congestion",
+    "tfidf_safe_construction",
+    "tfidf_safe_others",
+    "tfidf_safe_pot_holes",
+    "tfidf_safe_procession",
+    "tfidf_safe_public_event",
+    "tfidf_safe_road_conditions",
+    "tfidf_safe_starting_problem",
+    "tfidf_safe_starting_problem_vehicle_breakdown",
+    "tfidf_safe_tree_fall",
+    "tfidf_safe_unknown",
+    "tfidf_safe_unknown_accident",
+    "tfidf_safe_unknown_pot_holes",
+    "tfidf_safe_unknown_tree_fall",
+    "tfidf_safe_unknown_vehicle_breakdown",
+    "tfidf_safe_unknown_water_logging",
+    "tfidf_safe_vehicle_breakdown",
+    "tfidf_safe_vehicle_breakdown_vehicle_breakdown",
+    "tfidf_safe_water_logging"
+  ],
+  "n_train": 6538,
+  "n_test": 1635,
+  "personnel_model": {
+    "test_mae": 1.0346389403266214,
+    "test_rmse": 1.3105817125696804,
+    "test_r2": 0.8303421029990182,
+    "cv_mae_mean": 1.052321362882055,
+    "cv_mae_std": 0.019299245367648172,
+    "target_mean": 10.710767818904865,
+    "target_std": 3.270948932871722,
+    "top_features": [
+      {
+        "feature": "affected_radius",
+        "builtin_importance": 0.5388671289418293,
+        "permutation_importance": 0.8673402369250289
+      },
+      {
+        "feature": "veh_type_encoded",
+        "builtin_importance": 0.14955550890177893,
+        "permutation_importance": 0.3762314308048019
+      },
+      {
+        "feature": "peak_hour_flag",
+        "builtin_importance": 0.08364953544227205,
+        "permutation_importance": 0.19930841547272254
+      },
+      {
+        "feature": "contains_accident",
+        "builtin_importance": 0.05768129929003838,
+        "permutation_importance": 0.0568464724374947
+      },
+      {
+        "feature": "contains_rally",
+        "builtin_importance": 0.059394699619426866,
+        "permutation_importance": 0.055880749507852365
+      },
+      {
+        "feature": "event_path_distance_km",
+        "builtin_importance": 0.001586552424055057,
+        "permutation_importance": 0.0011052607386557584
+      },
+      {
+        "feature": "is_night",
+        "builtin_importance": 0.000605934519007588,
+        "permutation_importance": 0.000386099193733086
+      },
+      {
+        "feature": "day_of_week",
+        "builtin_importance": 0.0025775464940520254,
+        "permutation_importance": 0.00025589419175570116
+      },
+      {
+        "feature": "event_type_encoded",
+        "builtin_importance": 0.0010780583313660939,
+        "permutation_importance": 0.00021291720176418172
+      },
+      {
+        "feature": "tfidf_safe_accident",
+        "builtin_importance": 0.003578059014490501,
+        "permutation_importance": 0.000170704233849725
+      },
+      {
+        "feature": "is_holiday",
+        "builtin_importance": 0.00012469761077037113,
+        "permutation_importance": 0.0001509231040625475
+      },
+      {
+        "feature": "event_cause_encoded",
+        "builtin_importance": 0.004530469968800352,
+        "permutation_importance": 0.00015068558858405412
+      },
+      {
+        "feature": "tfidf_safe_vehicle_breakdown",
+        "builtin_importance": 0.0007619011818399589,
+        "permutation_importance": 0.00013590868379700916
+      },
+      {
+        "feature": "safe_location_cluster_avg_impact",
+        "builtin_importance": 0.003960509587816936,
+        "permutation_importance": 0.00011165186827294393
+      },
+      {
+        "feature": "tfidf_safe_unknown",
+        "builtin_importance": 0.0004319917279865676,
+        "permutation_importance": 6.936619114218667e-05
+      }
+    ]
+  },
+  "barricade_model": {
+    "test_mae": 1.2539685324295389,
+    "test_rmse": 1.5600509565222107,
+    "test_r2": 0.6962141470075458,
+    "cv_mae_mean": 1.2301804301689951,
+    "cv_mae_std": 0.027336552777592876,
+    "target_mean": 9.61823187519119,
+    "target_std": 2.933642399280967,
+    "top_features": [
+      {
+        "feature": "affected_radius",
+        "builtin_importance": 0.3134572566879639,
+        "permutation_importance": 0.25907337093627597
+      },
+      {
+        "feature": "requires_road_closure",
+        "builtin_importance": 0.37144153780517153,
+        "permutation_importance": 0.24183098042020268
+      },
+      {
+        "feature": "is_major_corridor",
+        "builtin_importance": 0.05728053366894617,
+        "permutation_importance": 0.11922710862954694
+      },
+      {
+        "feature": "contains_rally",
+        "builtin_importance": 0.11748333812844237,
+        "permutation_importance": 0.081899223575491
+      },
+      {
+        "feature": "event_type_encoded",
+        "builtin_importance": 0.02478420814441053,
+        "permutation_importance": 0.040075802907640595
+      },
+      {
+        "feature": "severity_encoded",
+        "builtin_importance": 0.0012923642941016678,
+        "permutation_importance": 0.002238557412331449
+      },
+      {
+        "feature": "tfidf_safe_public_event",
+        "builtin_importance": 0.0009149768543922922,
+        "permutation_importance": 0.0010057894051724858
+      },
+      {
+        "feature": "safe_corridor_avg_severity",
+        "builtin_importance": 0.005508874159815478,
+        "permutation_importance": 0.0008083415674297323
+      },
+      {
+        "feature": "is_holiday",
+        "builtin_importance": 0.0003526610778917088,
+        "permutation_importance": 0.00043407719818985835
+      },
+      {
+        "feature": "day_of_week",
+        "builtin_importance": 0.002749118774254493,
+        "permutation_importance": 0.0003282539375753235
+      },
+      {
+        "feature": "corridor_encoded",
+        "builtin_importance": 0.0015189176646092832,
+        "permutation_importance": 0.00020002948692100786
+      },
+      {
+        "feature": "tfidf_safe_tree_fall",
+        "builtin_importance": 0.00013873824192333644,
+        "permutation_importance": 0.00010211838516270555
+      },
+      {
+        "feature": "safe_location_cluster_rolling_impact_30d",
+        "builtin_importance": 0.004810509897313529,
+        "permutation_importance": 8.925160240548513e-05
+      },
+      {
+        "feature": "tfidf_safe_unknown_pot_holes",
+        "builtin_importance": 8.315723049097984e-05,
+        "permutation_importance": 8.862901085007757e-05
+      },
+      {
+        "feature": "tfidf_safe_unknown",
+        "builtin_importance": 0.0006657209281354028,
+        "permutation_importance": 7.947392220003513e-05
+      }
+    ]
+  },
+  "tier_model": {
+    "test_accuracy": 0.782262996941896,
+    "test_f1_macro": 0.7835311663123415,
+    "cv_f1_macro_mean": 0.9880429692793914,
+    "cv_f1_macro_std": 0.0037281813866180324,
+    "classes": [
+      "Critical",
+      "High",
+      "Low",
+      "Medium"
+    ],
+    "classification_report": {
+      "Critical": {
+        "precision": 1.0,
+        "recall": 0.8760869565217392,
+        "f1-score": 0.9339513325608343,
+        "support": 460.0
+      },
+      "High": {
+        "precision": 0.84375,
+        "recall": 0.4991596638655462,
+        "f1-score": 0.6272439281942978,
+        "support": 595.0
+      },
+      "Low": {
+        "precision": 0.9973474801061007,
+        "recall": 1.0,
+        "f1-score": 0.99867197875166,
+        "support": 376.0
+      },
+      "Medium": {
+        "precision": 0.40357852882703776,
+        "recall": 0.9950980392156863,
+        "f1-score": 0.5742574257425742,
+        "support": 204.0
+      },
+      "accuracy": 0.782262996941896,
+      "macro avg": {
+        "precision": 0.8111690022332846,
+        "recall": 0.8425861649007429,
+        "f1-score": 0.7835311663123415,
+        "support": 1635.0
+      },
+      "weighted avg": {
+        "precision": 0.8681124907648989,
+        "recall": 0.782262996941896,
+        "f1-score": 0.7923406294285628,
+        "support": 1635.0
+      }
+    },
+    "top_features": [
+      {
+        "feature": "affected_radius",
+        "builtin_importance": 0.23373747938642897,
+        "permutation_importance": 0.1746177370030581
+      },
+      {
+        "feature": "severity_encoded",
+        "builtin_importance": 0.20731262167258027,
+        "permutation_importance": 0.12912844036697246
+      },
+      {
+        "feature": "peak_hour_flag",
+        "builtin_importance": 0.0997326698922652,
+        "permutation_importance": 0.04472477064220187
+      },
+      {
+        "feature": "requires_road_closure",
+        "builtin_importance": 0.02893167062920089,
+        "permutation_importance": 0.0027522935779816654
+      },
+      {
+        "feature": "contains_breakdown",
+        "builtin_importance": 0.004851045836623091,
+        "permutation_importance": 0.0017584097859327796
+      },
+      {
+        "feature": "is_major_corridor",
+        "builtin_importance": 0.013032302430438136,
+        "permutation_importance": 0.0016819571865443889
+      },
+      {
+        "feature": "safe_corridor_rolling_impact_30d",
+        "builtin_importance": 0.02633539258012405,
+        "permutation_importance": 0.0016055045871559842
+      },
+      {
+        "feature": "tfidf_safe_procession",
+        "builtin_importance": 0.0025859203665367075,
+        "permutation_importance": 0.0012232415902141414
+      },
+      {
+        "feature": "tfidf_safe_vehicle_breakdown",
+        "builtin_importance": 0.005189467394242143,
+        "permutation_importance": 0.0011467889908257228
+      },
+      {
+        "feature": "veh_type_encoded",
+        "builtin_importance": 0.004780921620003858,
+        "permutation_importance": 0.001070336391437346
+      },
+      {
+        "feature": "contains_rally",
+        "builtin_importance": 0.008146658601013927,
+        "permutation_importance": 0.000993883792048969
+      },
+      {
+        "feature": "event_cause_encoded",
+        "builtin_importance": 0.006494514187412141,
+        "permutation_importance": 0.0009174311926605783
+      },
+      {
+        "feature": "contains_pothole",
+        "builtin_importance": 0.0009628199895489694,
+        "permutation_importance": 0.0005351681957186522
+      },
+      {
+        "feature": "day_of_week",
+        "builtin_importance": 0.0016274787328298622,
+        "permutation_importance": 0.00038226299694189836
+      },
+      {
+        "feature": "safe_junction_rolling_impact_30d",
+        "builtin_importance": 0.002794740467838791,
+        "permutation_importance": 0.00022935779816517232
+      }
+    ]
+  }
+}

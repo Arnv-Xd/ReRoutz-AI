@@ -1,0 +1,1293 @@
+{
+  "corridor": [
+    {
+      "corridor": "airport_new_south_road",
+      "latitude": 13.029057,
+      "longitude": 77.6323212,
+      "event_count": 67
+    },
+    {
+      "corridor": "bannerghata_road",
+      "latitude": 12.8998101,
+      "longitude": 77.5999341,
+      "event_count": 209
+    },
+    {
+      "corridor": "bellary_road_1",
+      "latitude": 13.0146674,
+      "longitude": 77.58484755,
+      "event_count": 610
+    },
+    {
+      "corridor": "bellary_road_2",
+      "latitude": 13.0986024,
+      "longitude": 77.598857,
+      "event_count": 379
+    },
+    {
+      "corridor": "cbd_1",
+      "latitude": 12.9808082,
+      "longitude": 77.6074055,
+      "event_count": 26
+    },
+    {
+      "corridor": "cbd_2",
+      "latitude": 12.983084049999999,
+      "longitude": 77.59662495,
+      "event_count": 104
+    },
+    {
+      "corridor": "hennur_main_road",
+      "latitude": 13.041338249999999,
+      "longitude": 77.62492585000001,
+      "event_count": 96
+    },
+    {
+      "corridor": "hosur_road",
+      "latitude": 12.9195903,
+      "longitude": 77.62151575,
+      "event_count": 298
+    },
+    {
+      "corridor": "irr_thanisandra_road",
+      "latitude": 12.9280618,
+      "longitude": 77.6214437,
+      "event_count": 95
+    },
+    {
+      "corridor": "magadi_road",
+      "latitude": 12.9874487,
+      "longitude": 77.5190005,
+      "event_count": 245
+    },
+    {
+      "corridor": "mysore_road",
+      "latitude": 12.9620105,
+      "longitude": 77.566492,
+      "event_count": 743
+    },
+    {
+      "corridor": "non_corridor",
+      "latitude": 12.98071455,
+      "longitude": 77.5868232,
+      "event_count": 3124
+    },
+    {
+      "corridor": "old_airport_road",
+      "latitude": 12.9592718,
+      "longitude": 77.6548567,
+      "event_count": 76
+    },
+    {
+      "corridor": "old_madras_road",
+      "latitude": 12.9791717,
+      "longitude": 77.628747,
+      "event_count": 263
+    },
+    {
+      "corridor": "orr_east_1",
+      "latitude": 12.92644525,
+      "longitude": 77.6778278,
+      "event_count": 244
+    },
+    {
+      "corridor": "orr_east_2",
+      "latitude": 12.9695205,
+      "longitude": 77.700601,
+      "event_count": 187
+    },
+    {
+      "corridor": "orr_north_1",
+      "latitude": 13.0267071,
+      "longitude": 77.6307164,
+      "event_count": 275
+    },
+    {
+      "corridor": "orr_north_2",
+      "latitude": 13.0435974,
+      "longitude": 77.5538975,
+      "event_count": 235
+    },
+    {
+      "corridor": "orr_west_1",
+      "latitude": 12.91551235,
+      "longitude": 77.5649978,
+      "event_count": 168
+    },
+    {
+      "corridor": "tumkur_road",
+      "latitude": 13.032013105,
+      "longitude": 77.53472425000001,
+      "event_count": 458
+    },
+    {
+      "corridor": "varthur_road",
+      "latitude": 12.9563017,
+      "longitude": 77.7148996,
+      "event_count": 77
+    },
+    {
+      "corridor": "west_of_chord_road",
+      "latitude": 12.984894149999999,
+      "longitude": 77.54903645,
+      "event_count": 174
+    }
+  ],
+  "junction": [
+    {
+      "junction": "28thmainjayanagarjunc",
+      "latitude": 12.91684515,
+      "longitude": 77.5950819,
+      "event_count": 6
+    },
+    {
+      "junction": "29thmainrdbtm_layoutjunc",
+      "latitude": 12.9162395,
+      "longitude": 77.6153012,
+      "event_count": 5
+    },
+    {
+      "junction": "a_s_charstreet_mysorerdjunc",
+      "latitude": 12.9645367,
+      "longitude": 77.57359,
+      "event_count": 5
+    },
+    {
+      "junction": "agarajunction",
+      "latitude": 12.92457375,
+      "longitude": 77.64957634999999,
+      "event_count": 6
+    },
+    {
+      "junction": "anandraojunction",
+      "latitude": 12.9809017,
+      "longitude": 77.573705,
+      "event_count": 7
+    },
+    {
+      "junction": "anepalyajunc",
+      "latitude": 12.952135635,
+      "longitude": 77.60537049000001,
+      "event_count": 6
+    },
+    {
+      "junction": "anilkumblecircle",
+      "latitude": 12.9763755,
+      "longitude": 77.6017038,
+      "event_count": 8
+    },
+    {
+      "junction": "arakeregatejunc",
+      "latitude": 12.8904183,
+      "longitude": 77.5978429,
+      "event_count": 15
+    },
+    {
+      "junction": "arbindo_circle",
+      "latitude": 12.91704115,
+      "longitude": 77.58586095,
+      "event_count": 10
+    },
+    {
+      "junction": "ashirwadamcircle",
+      "latitude": 12.9706591,
+      "longitude": 77.6040613,
+      "event_count": 5
+    },
+    {
+      "junction": "ashoknagar_junction_shoolaycircle",
+      "latitude": 12.96634985,
+      "longitude": 77.60674215,
+      "event_count": 6
+    },
+    {
+      "junction": "ayyappatemplejunc",
+      "latitude": 12.9238208,
+      "longitude": 77.6186665,
+      "event_count": 49
+    },
+    {
+      "junction": "bagalurcrossjunc",
+      "latitude": 13.1219633,
+      "longitude": 77.6109722,
+      "event_count": 27
+    },
+    {
+      "junction": "banashankaribusstandjunc",
+      "latitude": 12.91712353,
+      "longitude": 77.5735724,
+      "event_count": 13
+    },
+    {
+      "junction": "bangalorebodybuildersjunc",
+      "latitude": 12.9590142,
+      "longitude": 77.5555818,
+      "event_count": 19
+    },
+    {
+      "junction": "basaweshwaracircle",
+      "latitude": 12.9843829,
+      "longitude": 77.5882441,
+      "event_count": 5
+    },
+    {
+      "junction": "batrayanapura_amrutahalli_junction",
+      "latitude": 13.067379899999999,
+      "longitude": 77.59301121,
+      "event_count": 14
+    },
+    {
+      "junction": "bda_junctio_koramangala",
+      "latitude": 12.931490499999999,
+      "longitude": 77.62267944999999,
+      "event_count": 6
+    },
+    {
+      "junction": "bel_circle",
+      "latitude": 13.0439997,
+      "longitude": 77.5564883,
+      "event_count": 25
+    },
+    {
+      "junction": "bigbazaar_whitefield_junc",
+      "latitude": 12.9881194,
+      "longitude": 77.73353005,
+      "event_count": 8
+    },
+    {
+      "junction": "bigbazaarjunction_oldmadrasrd",
+      "latitude": 12.991321150000001,
+      "longitude": 77.65758055,
+      "event_count": 26
+    },
+    {
+      "junction": "bilekahallijunc",
+      "latitude": 12.89996565,
+      "longitude": 77.60092945,
+      "event_count": 14
+    },
+    {
+      "junction": "binnymilljunction",
+      "latitude": 12.9700048,
+      "longitude": 77.5679993,
+      "event_count": 7
+    },
+    {
+      "junction": "biryandcircle",
+      "latitude": 12.9641306,
+      "longitude": 77.5698992,
+      "event_count": 5
+    },
+    {
+      "junction": "bloodbankcircle",
+      "latitude": 12.9622758,
+      "longitude": 77.5945534,
+      "event_count": 15
+    },
+    {
+      "junction": "bmtcjunction_k_h_road",
+      "latitude": 12.95671621,
+      "longitude": 77.59253751,
+      "event_count": 10
+    },
+    {
+      "junction": "bommanahalli",
+      "latitude": 12.906897449999999,
+      "longitude": 77.62806384999999,
+      "event_count": 26
+    },
+    {
+      "junction": "btm16thmain_orr_junc",
+      "latitude": 12.916427800000001,
+      "longitude": 77.60972885,
+      "event_count": 6
+    },
+    {
+      "junction": "bucheryjunction",
+      "latitude": 12.9514566,
+      "longitude": 77.621369,
+      "event_count": 11
+    },
+    {
+      "junction": "chaudrayacircle_udayatvcircle_cantonmentjunc",
+      "latitude": 12.9935392,
+      "longitude": 77.5955639,
+      "event_count": 7
+    },
+    {
+      "junction": "chokasandra_tumkur_road",
+      "latitude": 13.042341650000001,
+      "longitude": 77.5148761,
+      "event_count": 14
+    },
+    {
+      "junction": "cid_carltonhousejunc",
+      "latitude": 12.9801916,
+      "longitude": 77.5860983,
+      "event_count": 9
+    },
+    {
+      "junction": "cmh_rd_adarshtheaterjunc",
+      "latitude": 12.9783026,
+      "longitude": 77.6287561,
+      "event_count": 5
+    },
+    {
+      "junction": "cmp_gatejunc",
+      "latitude": 12.957700200000001,
+      "longitude": 77.60594855,
+      "event_count": 20
+    },
+    {
+      "junction": "coffeeboardjunc",
+      "latitude": 12.98326395,
+      "longitude": 77.5957836,
+      "event_count": 8
+    },
+    {
+      "junction": "commandohospitaljunc",
+      "latitude": 12.966361849999998,
+      "longitude": 77.6244462,
+      "event_count": 6
+    },
+    {
+      "junction": "dairycircle",
+      "latitude": 12.936683,
+      "longitude": 77.60281,
+      "event_count": 5
+    },
+    {
+      "junction": "devangahosteljunction",
+      "latitude": 12.963242,
+      "longitude": 77.5892379,
+      "event_count": 5
+    },
+    {
+      "junction": "devasandra_k_r_puram",
+      "latitude": 13.0096311,
+      "longitude": 77.6970983,
+      "event_count": 30
+    },
+    {
+      "junction": "deverabeesanahalli_orr_junc",
+      "latitude": 12.9310883,
+      "longitude": 77.6863341,
+      "event_count": 15
+    },
+    {
+      "junction": "dhobighatjunc",
+      "latitude": 12.98646261,
+      "longitude": 77.5502535,
+      "event_count": 7
+    },
+    {
+      "junction": "domlurwatertank",
+      "latitude": 12.96116525,
+      "longitude": 77.638886,
+      "event_count": 12
+    },
+    {
+      "junction": "dr_rajkumarrd_10thcrossrdjunc",
+      "latitude": 13.0083617,
+      "longitude": 77.5544196,
+      "event_count": 5
+    },
+    {
+      "junction": "dr_tcm_royanrd_near_ambedkarstatue",
+      "latitude": 12.9651619,
+      "longitude": 77.56820285,
+      "event_count": 12
+    },
+    {
+      "junction": "electroniccitygate_2junc",
+      "latitude": 12.8551517,
+      "longitude": 77.6651842,
+      "event_count": 6
+    },
+    {
+      "junction": "elitejunc",
+      "latitude": 12.97575035,
+      "longitude": 77.57510825,
+      "event_count": 6
+    },
+    {
+      "junction": "fti_junction_kanteeravastudio",
+      "latitude": 13.0210894,
+      "longitude": 77.5318817,
+      "event_count": 11
+    },
+    {
+      "junction": "gangammagudijunc",
+      "latitude": 13.0567354,
+      "longitude": 77.54666705,
+      "event_count": 6
+    },
+    {
+      "junction": "garebhavipalyajunc",
+      "latitude": 12.8945629,
+      "longitude": 77.63653245,
+      "event_count": 5
+    },
+    {
+      "junction": "gokuldasimagesjunc",
+      "latitude": 13.03023215,
+      "longitude": 77.53699345000001,
+      "event_count": 28
+    },
+    {
+      "junction": "goruguntepalyajunc",
+      "latitude": 13.0291663,
+      "longitude": 77.5402194,
+      "event_count": 20
+    },
+    {
+      "junction": "hainsjunc",
+      "latitude": 12.99413665,
+      "longitude": 77.6063921,
+      "event_count": 6
+    },
+    {
+      "junction": "hebbalflyoverjunc",
+      "latitude": 13.04236735,
+      "longitude": 77.59067465000001,
+      "event_count": 28
+    },
+    {
+      "junction": "hennurrd_davisrdjunction",
+      "latitude": 13.0034745,
+      "longitude": 77.61968747,
+      "event_count": 5
+    },
+    {
+      "junction": "hennurroad_orr_junc",
+      "latitude": 13.0289016,
+      "longitude": 77.6315961,
+      "event_count": 17
+    },
+    {
+      "junction": "hesaraghattajunction",
+      "latitude": 13.0454633,
+      "longitude": 77.5076621,
+      "event_count": 30
+    },
+    {
+      "junction": "hoodijunction",
+      "latitude": 12.99232115,
+      "longitude": 77.71595880000001,
+      "event_count": 6
+    },
+    {
+      "junction": "hopefarmjunction",
+      "latitude": 12.98418315,
+      "longitude": 77.7524423,
+      "event_count": 10
+    },
+    {
+      "junction": "horamavujunction",
+      "latitude": 13.018956849999999,
+      "longitude": 77.65629645,
+      "event_count": 12
+    },
+    {
+      "junction": "hudsoncircle",
+      "latitude": 12.967792045,
+      "longitude": 77.5907259,
+      "event_count": 16
+    },
+    {
+      "junction": "hulimaverd_banneraghattardjunc",
+      "latitude": 12.881902,
+      "longitude": 77.5958795,
+      "event_count": 9
+    },
+    {
+      "junction": "hunsemarammanahallijunction",
+      "latitude": 13.1404344,
+      "longitude": 77.617685,
+      "event_count": 7
+    },
+    {
+      "junction": "ibblurjunction",
+      "latitude": 12.9215257,
+      "longitude": 77.6648697,
+      "event_count": 13
+    },
+    {
+      "junction": "indianexpressjunction",
+      "latitude": 12.983800800000001,
+      "longitude": 77.5970206,
+      "event_count": 16
+    },
+    {
+      "junction": "isro_junction_airport_rd",
+      "latitude": 12.9592633,
+      "longitude": 77.6551777,
+      "event_count": 9
+    },
+    {
+      "junction": "itmadujunction",
+      "latitude": 12.92811485,
+      "longitude": 77.54624035,
+      "event_count": 6
+    },
+    {
+      "junction": "jaimuniraocircle",
+      "latitude": 12.9782935,
+      "longitude": 77.54393771,
+      "event_count": 5
+    },
+    {
+      "junction": "jakkurcrossjunction",
+      "latitude": 13.0735301,
+      "longitude": 77.59286565,
+      "event_count": 18
+    },
+    {
+      "junction": "jalahallicross_sm_circle",
+      "latitude": 13.040006250000001,
+      "longitude": 77.5183112,
+      "event_count": 32
+    },
+    {
+      "junction": "jayadevahospitaljunc",
+      "latitude": 12.916086100000001,
+      "longitude": 77.59999110000001,
+      "event_count": 8
+    },
+    {
+      "junction": "jp_nagar_15th_cross_junction",
+      "latitude": 12.9060618,
+      "longitude": 77.5856503,
+      "event_count": 7
+    },
+    {
+      "junction": "jp_nagar_9th_cross_24th_main_jn",
+      "latitude": 12.9119511,
+      "longitude": 77.5858317,
+      "event_count": 5
+    },
+    {
+      "junction": "k_h_road_siddaiahrdjunc_bmtc_bigbazaar",
+      "latitude": 12.95269135,
+      "longitude": 77.5909027,
+      "event_count": 6
+    },
+    {
+      "junction": "k_r_circle",
+      "latitude": 12.976525,
+      "longitude": 77.5863883,
+      "event_count": 31
+    },
+    {
+      "junction": "k_r_marketjunction",
+      "latitude": 12.9636022,
+      "longitude": 77.5779542,
+      "event_count": 7
+    },
+    {
+      "junction": "kadirenahallijunction",
+      "latitude": 12.9157951,
+      "longitude": 77.56518925,
+      "event_count": 8
+    },
+    {
+      "junction": "kadubeesanahalli_orr_junc",
+      "latitude": 12.93878497,
+      "longitude": 77.697052,
+      "event_count": 12
+    },
+    {
+      "junction": "kalyannagar_orr_junc",
+      "latitude": 13.02410705,
+      "longitude": 77.6431594,
+      "event_count": 6
+    },
+    {
+      "junction": "kamrajrdjunction",
+      "latitude": 12.9772805,
+      "longitude": 77.6087452,
+      "event_count": 5
+    },
+    {
+      "junction": "kanakapurard_ringrdjunction",
+      "latitude": 12.9061826,
+      "longitude": 77.5732899,
+      "event_count": 9
+    },
+    {
+      "junction": "karnatakabhavanjunction",
+      "latitude": 12.98205505,
+      "longitude": 77.5644881,
+      "event_count": 9
+    },
+    {
+      "junction": "katriguppejunction",
+      "latitude": 12.925256000000001,
+      "longitude": 77.55020214999999,
+      "event_count": 12
+    },
+    {
+      "junction": "khodayscircle_dv_urscircle",
+      "latitude": 12.9802583,
+      "longitude": 77.5713868,
+      "event_count": 23
+    },
+    {
+      "junction": "kimco_junction",
+      "latitude": 12.9514517,
+      "longitude": 77.5373979,
+      "event_count": 31
+    },
+    {
+      "junction": "kodigehallicross",
+      "latitude": 13.0546133,
+      "longitude": 77.593432,
+      "event_count": 11
+    },
+    {
+      "junction": "kogillucrossjunc",
+      "latitude": 13.1052067,
+      "longitude": 77.6008869,
+      "event_count": 15
+    },
+    {
+      "junction": "konanakuntejunction_kanakapurarrd",
+      "latitude": 12.89013905,
+      "longitude": 77.56398815,
+      "event_count": 6
+    },
+    {
+      "junction": "koramangalawatertankjunc",
+      "latitude": 12.9274814,
+      "longitude": 77.6212365,
+      "event_count": 29
+    },
+    {
+      "junction": "krishnaflourmill",
+      "latitude": 12.9847744,
+      "longitude": 77.5723991,
+      "event_count": 19
+    },
+    {
+      "junction": "krupanidhi_college",
+      "latitude": 12.9247775,
+      "longitude": 77.6280755,
+      "event_count": 5
+    },
+    {
+      "junction": "kudlu_gate_junc",
+      "latitude": 12.8891573,
+      "longitude": 77.63961979999999,
+      "event_count": 6
+    },
+    {
+      "junction": "kundanahalligatejunc",
+      "latitude": 12.9557474,
+      "longitude": 77.71708396,
+      "event_count": 11
+    },
+    {
+      "junction": "lalbaghmaingatejunc",
+      "latitude": 12.953966600000001,
+      "longitude": 77.5854253,
+      "event_count": 6
+    },
+    {
+      "junction": "leprosyhospitaljunc",
+      "latitude": 12.9757645,
+      "longitude": 77.5645174,
+      "event_count": 21
+    },
+    {
+      "junction": "lrde_junction",
+      "latitude": 12.9874171,
+      "longitude": 77.5878455,
+      "event_count": 9
+    },
+    {
+      "junction": "mahalaxmilayoutentrancejunc",
+      "latitude": 13.0108338,
+      "longitude": 77.5485942,
+      "event_count": 5
+    },
+    {
+      "junction": "malleswaram18thcrossrd_sampigerdjunc",
+      "latitude": 13.0084952,
+      "longitude": 77.5717493,
+      "event_count": 5
+    },
+    {
+      "junction": "maratahallibridgejunc",
+      "latitude": 12.9563571,
+      "longitude": 77.70084374999999,
+      "event_count": 16
+    },
+    {
+      "junction": "margosard_18thcrossjunc",
+      "latitude": 13.01148005,
+      "longitude": 77.56936250000001,
+      "event_count": 6
+    },
+    {
+      "junction": "marigowda_tavarkererdjunc",
+      "latitude": 12.936279,
+      "longitude": 77.6070675,
+      "event_count": 13
+    },
+    {
+      "junction": "mayohalljunction",
+      "latitude": 12.9733973,
+      "longitude": 77.610582,
+      "event_count": 5
+    },
+    {
+      "junction": "mc_circle",
+      "latitude": 12.97635565,
+      "longitude": 77.5478463,
+      "event_count": 6
+    },
+    {
+      "junction": "meenakshimalljunc",
+      "latitude": 12.87686415,
+      "longitude": 77.59523245,
+      "event_count": 8
+    },
+    {
+      "junction": "mekhricircle",
+      "latitude": 13.0145694,
+      "longitude": 77.5838793,
+      "event_count": 64
+    },
+    {
+      "junction": "mico_bande",
+      "latitude": 12.944963399999999,
+      "longitude": 77.60273075,
+      "event_count": 6
+    },
+    {
+      "junction": "millcornerrd_sampigerdjunc",
+      "latitude": 12.9920652,
+      "longitude": 77.5714241,
+      "event_count": 9
+    },
+    {
+      "junction": "minsksquare_cto_junction",
+      "latitude": 12.982029350000001,
+      "longitude": 77.59719125000001,
+      "event_count": 8
+    },
+    {
+      "junction": "mintojunction",
+      "latitude": 12.9603495,
+      "longitude": 77.5718749,
+      "event_count": 5
+    },
+    {
+      "junction": "motherteressacircle",
+      "latitude": 12.9666771,
+      "longitude": 77.609077,
+      "event_count": 11
+    },
+    {
+      "junction": "ms_ramaiahjunc_tollgate",
+      "latitude": 13.0172915,
+      "longitude": 77.5604211,
+      "event_count": 11
+    },
+    {
+      "junction": "mysorerd_ringrdjunc_nayandanahallii",
+      "latitude": 12.94509038,
+      "longitude": 77.5273583,
+      "event_count": 19
+    },
+    {
+      "junction": "n_r_squarejunc",
+      "latitude": 12.965364600000001,
+      "longitude": 77.58665020000001,
+      "event_count": 10
+    },
+    {
+      "junction": "naganathapurajunction",
+      "latitude": 12.8697949,
+      "longitude": 77.65323985,
+      "event_count": 12
+    },
+    {
+      "junction": "nagarbhavi",
+      "latitude": 12.9588379,
+      "longitude": 77.518291,
+      "event_count": 9
+    },
+    {
+      "junction": "nagavara_orr_junction",
+      "latitude": 13.04013719,
+      "longitude": 77.62431753,
+      "event_count": 32
+    },
+    {
+      "junction": "nimhans_junction",
+      "latitude": 12.94019295,
+      "longitude": 77.5976671,
+      "event_count": 6
+    },
+    {
+      "junction": "oldmadrasrd_80feetrdjunc",
+      "latitude": 12.9859871,
+      "longitude": 77.64543805,
+      "event_count": 8
+    },
+    {
+      "junction": "oldmadrasrd_indranagar100ftrdjunc",
+      "latitude": 12.9841487,
+      "longitude": 77.6411007,
+      "event_count": 12
+    },
+    {
+      "junction": "oldmadrasrd_ngef_junc",
+      "latitude": 12.98683175,
+      "longitude": 77.6481603,
+      "event_count": 8
+    },
+    {
+      "junction": "oldpolicestation_ashoknagar",
+      "latitude": 12.9681339,
+      "longitude": 77.6062498,
+      "event_count": 5
+    },
+    {
+      "junction": "operahousejunc",
+      "latitude": 12.97201435,
+      "longitude": 77.606961,
+      "event_count": 6
+    },
+    {
+      "junction": "peenyapolicestation",
+      "latitude": 13.0375844,
+      "longitude": 77.52220635,
+      "event_count": 12
+    },
+    {
+      "junction": "platformrdjunction",
+      "latitude": 12.98173285,
+      "longitude": 77.5701809,
+      "event_count": 6
+    },
+    {
+      "junction": "policecornerjunc",
+      "latitude": 12.9680852,
+      "longitude": 77.58720729999999,
+      "event_count": 26
+    },
+    {
+      "junction": "policetimmaiahcircle_gpo",
+      "latitude": 12.981998350000001,
+      "longitude": 77.5945414,
+      "event_count": 14
+    },
+    {
+      "junction": "potterycircle",
+      "latitude": 13.0018933,
+      "longitude": 77.6121721,
+      "event_count": 5
+    },
+    {
+      "junction": "prasannajunction",
+      "latitude": 12.975644509999999,
+      "longitude": 77.55302895,
+      "event_count": 6
+    },
+    {
+      "junction": "priyadarshinihotel_jayamahal_rt_nagar",
+      "latitude": 13.001703500000001,
+      "longitude": 77.5945777,
+      "event_count": 6
+    },
+    {
+      "junction": "purnimatheaterjunc",
+      "latitude": 12.96045045,
+      "longitude": 77.5875364,
+      "event_count": 8
+    },
+    {
+      "junction": "queensstatuecircle",
+      "latitude": 12.9767292,
+      "longitude": 77.5991521,
+      "event_count": 9
+    },
+    {
+      "junction": "rajajinagar19thmainjunc",
+      "latitude": 12.9977769,
+      "longitude": 77.55125585,
+      "event_count": 6
+    },
+    {
+      "junction": "rajajinagarentrancejunction",
+      "latitude": 12.9829842,
+      "longitude": 77.5603629,
+      "event_count": 5
+    },
+    {
+      "junction": "rajeshwarijunc",
+      "latitude": 12.9365793,
+      "longitude": 77.518811,
+      "event_count": 22
+    },
+    {
+      "junction": "ramaiahcircle_ulsoorpolicestation",
+      "latitude": 12.9757906,
+      "longitude": 77.6262856,
+      "event_count": 9
+    },
+    {
+      "junction": "ramamurthynagarjunction",
+      "latitude": 13.0167887,
+      "longitude": 77.6610443,
+      "event_count": 9
+    },
+    {
+      "junction": "richmond_circle_jn",
+      "latitude": 12.96515466,
+      "longitude": 77.5962145,
+      "event_count": 11
+    },
+    {
+      "junction": "ring_road_near_kengunte_junction",
+      "latitude": 12.9593713,
+      "longitude": 77.5039086,
+      "event_count": 7
+    },
+    {
+      "junction": "ringroad_ullaljunction",
+      "latitude": 12.9516567,
+      "longitude": 77.4995444,
+      "event_count": 7
+    },
+    {
+      "junction": "rrr_okalipuram_junction",
+      "latitude": 12.982502199999999,
+      "longitude": 77.56798025,
+      "event_count": 6
+    },
+    {
+      "junction": "sadahalligatejunc_airportrd",
+      "latitude": 13.1908827,
+      "longitude": 77.6458767,
+      "event_count": 7
+    },
+    {
+      "junction": "sadashivnagarjunc",
+      "latitude": 13.0146372,
+      "longitude": 77.572703,
+      "event_count": 13
+    },
+    {
+      "junction": "sagarhospitaljunc",
+      "latitude": 12.9289166,
+      "longitude": 77.6003272,
+      "event_count": 5
+    },
+    {
+      "junction": "sagartheatrejunc",
+      "latitude": 12.974235149999998,
+      "longitude": 77.57848089999999,
+      "event_count": 6
+    },
+    {
+      "junction": "sandeepunnikrishnan_yelhanka",
+      "latitude": 13.10146005,
+      "longitude": 77.58632095,
+      "event_count": 8
+    },
+    {
+      "junction": "santhecircle",
+      "latitude": 13.0977513,
+      "longitude": 77.5978107,
+      "event_count": 25
+    },
+    {
+      "junction": "sarjapurrd_st_johnsrdjunc",
+      "latitude": 12.927597899999999,
+      "longitude": 77.6159421,
+      "event_count": 10
+    },
+    {
+      "junction": "sattelitebusstandjunc",
+      "latitude": 12.953795,
+      "longitude": 77.5433473,
+      "event_count": 43
+    },
+    {
+      "junction": "shantalajunction",
+      "latitude": 12.9747553,
+      "longitude": 77.570277,
+      "event_count": 15
+    },
+    {
+      "junction": "shivajinagar_brv_junction",
+      "latitude": 12.9792575,
+      "longitude": 77.6026803,
+      "event_count": 16
+    },
+    {
+      "junction": "shivajitalkiesjunc",
+      "latitude": 12.9633032,
+      "longitude": 77.5819049,
+      "event_count": 7
+    },
+    {
+      "junction": "shivandacircle",
+      "latitude": 12.987941450000001,
+      "longitude": 77.57971505,
+      "event_count": 12
+    },
+    {
+      "junction": "shivashankara_circle",
+      "latitude": 12.9580524,
+      "longitude": 77.5739029,
+      "event_count": 5
+    },
+    {
+      "junction": "siddalingaiahcircle",
+      "latitude": 12.9717317,
+      "longitude": 77.5940561,
+      "event_count": 11
+    },
+    {
+      "junction": "siddapurajunction",
+      "latitude": 12.9493392,
+      "longitude": 77.5943794,
+      "event_count": 5
+    },
+    {
+      "junction": "silkboardjunc",
+      "latitude": 12.9166927,
+      "longitude": 77.6232459,
+      "event_count": 33
+    },
+    {
+      "junction": "sindhicolonyjunction",
+      "latitude": 12.994696,
+      "longitude": 77.6159391,
+      "event_count": 9
+    },
+    {
+      "junction": "sirsicircle",
+      "latitude": 12.9613113,
+      "longitude": 77.5594103,
+      "event_count": 9
+    },
+    {
+      "junction": "srigandakaval",
+      "latitude": 12.988537050000001,
+      "longitude": 77.50953595,
+      "event_count": 14
+    },
+    {
+      "junction": "srs_peenya_junc",
+      "latitude": 13.0346029,
+      "longitude": 77.52987795,
+      "event_count": 20
+    },
+    {
+      "junction": "statebankofmysorejunc",
+      "latitude": 12.973564849999999,
+      "longitude": 77.58229739999999,
+      "event_count": 12
+    },
+    {
+      "junction": "subbannajunction",
+      "latitude": 12.98324679,
+      "longitude": 77.5768463,
+      "event_count": 9
+    },
+    {
+      "junction": "subedarchatramrd_near_sheshadripuramps",
+      "latitude": 12.98771705,
+      "longitude": 77.57410491,
+      "event_count": 8
+    },
+    {
+      "junction": "sumanhalli",
+      "latitude": 12.98691135,
+      "longitude": 77.52011135000001,
+      "event_count": 16
+    },
+    {
+      "junction": "tatainstitutecircle",
+      "latitude": 13.0141278,
+      "longitude": 77.56586585,
+      "event_count": 12
+    },
+    {
+      "junction": "toll_gate_mysore_road",
+      "latitude": 12.9574666,
+      "longitude": 77.5519898,
+      "event_count": 33
+    },
+    {
+      "junction": "townhalljunction",
+      "latitude": 12.963777799999999,
+      "longitude": 77.5842427,
+      "event_count": 30
+    },
+    {
+      "junction": "trinitycircle",
+      "latitude": 12.9720341,
+      "longitude": 77.6194831,
+      "event_count": 11
+    },
+    {
+      "junction": "tumkurrdmarappanapalyajunc",
+      "latitude": 13.01907235,
+      "longitude": 77.55333325000001,
+      "event_count": 14
+    },
+    {
+      "junction": "tyagihengalvarayajunc_dickensonrd",
+      "latitude": 12.9814934,
+      "longitude": 77.6085237,
+      "event_count": 5
+    },
+    {
+      "junction": "ulsoorgatejunc",
+      "latitude": 12.966898950000001,
+      "longitude": 77.58733035,
+      "event_count": 12
+    },
+    {
+      "junction": "universityjunc_janabharti",
+      "latitude": 12.9357695,
+      "longitude": 77.5127053,
+      "event_count": 11
+    },
+    {
+      "junction": "urvashijunction",
+      "latitude": 12.9556235,
+      "longitude": 77.58573455,
+      "event_count": 6
+    },
+    {
+      "junction": "uttarahallijunction",
+      "latitude": 12.90665577,
+      "longitude": 77.5448433,
+      "event_count": 15
+    },
+    {
+      "junction": "veerannapalyajunction_bel_ho",
+      "latitude": 13.0416234,
+      "longitude": 77.6135233,
+      "event_count": 30
+    },
+    {
+      "junction": "veerasandragatejunction",
+      "latitude": 12.8401809,
+      "longitude": 77.6770241,
+      "event_count": 11
+    },
+    {
+      "junction": "vijayanagarbusstandjunction",
+      "latitude": 12.97316185,
+      "longitude": 77.53905950000001,
+      "event_count": 6
+    },
+    {
+      "junction": "wilsongarden10thcrossjunc",
+      "latitude": 12.946068635,
+      "longitude": 77.59552605,
+      "event_count": 6
+    },
+    {
+      "junction": "wilsongarden12thcrossjunc",
+      "latitude": 12.9447628,
+      "longitude": 77.59711035000001,
+      "event_count": 8
+    },
+    {
+      "junction": "yelhankabypass",
+      "latitude": 13.0829798,
+      "longitude": 77.5935494,
+      "event_count": 19
+    },
+    {
+      "junction": "yelhankacircle",
+      "latitude": 13.0943458,
+      "longitude": 77.59664889999999,
+      "event_count": 34
+    },
+    {
+      "junction": "yeshwanthpuracircle",
+      "latitude": 13.01784565,
+      "longitude": 77.55689925,
+      "event_count": 38
+    }
+  ],
+  "location_cluster_centroids": [
+    {
+      "location_cluster": 0,
+      "latitude": 12.986253381994292,
+      "longitude": 77.59507789067634,
+      "event_count": 8058
+    },
+    {
+      "location_cluster": 1,
+      "latitude": 13.254449071363636,
+      "longitude": 77.71255819181819,
+      "event_count": 22
+    },
+    {
+      "location_cluster": 2,
+      "latitude": 12.920896258333334,
+      "longitude": 77.73648120166666,
+      "event_count": 6
+    },
+    {
+      "location_cluster": 3,
+      "latitude": 12.883431832,
+      "longitude": 77.75135234,
+      "event_count": 25
+    },
+    {
+      "location_cluster": 4,
+      "latitude": 13.188915549999999,
+      "longitude": 77.69286471666666,
+      "event_count": 12
+    },
+    {
+      "location_cluster": 5,
+      "latitude": 13.183849925,
+      "longitude": 77.568397775,
+      "event_count": 4
+    },
+    {
+      "location_cluster": 6,
+      "latitude": 12.80151064,
+      "longitude": 77.7111917,
+      "event_count": 5
+    },
+    {
+      "location_cluster": 7,
+      "latitude": 13.160829425,
+      "longitude": 77.59565892500001,
+      "event_count": 4
+    },
+    {
+      "location_cluster": 8,
+      "latitude": 12.941431442857143,
+      "longitude": 77.47024675714286,
+      "event_count": 7
+    },
+    {
+      "location_cluster": 9,
+      "latitude": 12.810068575,
+      "longitude": 77.664888875,
+      "event_count": 4
+    },
+    {
+      "location_cluster": 10,
+      "latitude": 13.1288573,
+      "longitude": 77.6635408,
+      "event_count": 3
+    }
+  ],
+  "location_cluster_eps_km": 1.665
+}

@@ -1,0 +1,2325 @@
+{
+  "global_fallback": {
+    "avg_duration": 904.3390308560973,
+    "avg_severity": 1.0644806068763,
+    "avg_impact": 64.94374158815612,
+    "event_frequency": 355.3478260869565,
+    "rolling_impact_30d": 62.49094999999999
+  },
+  "corridor": {
+    "unknown": {
+      "avg_duration": 3530.2972372964914,
+      "avg_severity": 0.7368421052631579,
+      "avg_impact": 49.720000000000006,
+      "event_frequency": 19.0,
+      "rolling_impact_30d": 51.77666666666667
+    },
+    "hennur_main_road": {
+      "avg_duration": 1434.2661633938596,
+      "avg_severity": 1.3789473684210527,
+      "avg_impact": 60.49442105263158,
+      "event_frequency": 95.0,
+      "rolling_impact_30d": 58.44666666666667
+    },
+    "cbd_1": {
+      "avg_duration": 2292.129929394,
+      "avg_severity": 1.36,
+      "avg_impact": 56.754799999999996,
+      "event_frequency": 25.0,
+      "rolling_impact_30d": 55.997
+    },
+    "old_airport_road": {
+      "avg_duration": 1388.853960523778,
+      "avg_severity": 1.44,
+      "avg_impact": 71.49426666666666,
+      "event_frequency": 75.0,
+      "rolling_impact_30d": 71.35466666666666
+    },
+    "orr_east_1": {
+      "avg_duration": 810.7359537591221,
+      "avg_severity": 1.440329218106996,
+      "avg_impact": 70.80777777777779,
+      "event_frequency": 243.0,
+      "rolling_impact_30d": 67.0925
+    },
+    "hosur_road": {
+      "avg_duration": 812.4623009387766,
+      "avg_severity": 1.4006734006734007,
+      "avg_impact": 68.11104377104377,
+      "event_frequency": 297.0,
+      "rolling_impact_30d": 69.0394
+    },
+    "bannerghata_road": {
+      "avg_duration": 937.9972035596154,
+      "avg_severity": 1.2884615384615385,
+      "avg_impact": 64.99499999999999,
+      "event_frequency": 208.0,
+      "rolling_impact_30d": 65.82508771929825
+    },
+    "orr_east_2": {
+      "avg_duration": 878.8179363767025,
+      "avg_severity": 1.6720430107526882,
+      "avg_impact": 83.19327956989248,
+      "event_frequency": 186.0,
+      "rolling_impact_30d": 77.68549019607843
+    },
+    "irr_thanisandra_road": {
+      "avg_duration": 717.8920380943263,
+      "avg_severity": 1.2446808510638299,
+      "avg_impact": 52.026702127659576,
+      "event_frequency": 94.0,
+      "rolling_impact_30d": 48.7475
+    },
+    "airport_new_south_road": {
+      "avg_duration": 1578.5750131830807,
+      "avg_severity": 1.5303030303030303,
+      "avg_impact": 76.09939393939395,
+      "event_frequency": 66.0,
+      "rolling_impact_30d": 65.98299999999999
+    },
+    "varthur_road": {
+      "avg_duration": 829.5461320208333,
+      "avg_severity": 1.5394736842105263,
+      "avg_impact": 66.10657894736842,
+      "event_frequency": 76.0,
+      "rolling_impact_30d": 71.70833333333333
+    },
+    "orr_west_1": {
+      "avg_duration": 981.6131703211577,
+      "avg_severity": 1.3712574850299402,
+      "avg_impact": 69.00718562874252,
+      "event_frequency": 167.0,
+      "rolling_impact_30d": 69.78422222222223
+    },
+    "orr_north_2": {
+      "avg_duration": 670.5945887119658,
+      "avg_severity": 1.3632478632478633,
+      "avg_impact": 70.31880341880341,
+      "event_frequency": 234.0,
+      "rolling_impact_30d": 69.39676923076922
+    },
+    "mysore_road": {
+      "avg_duration": 814.9433549210692,
+      "avg_severity": 1.4164420485175202,
+      "avg_impact": 70.77252021563342,
+      "event_frequency": 742.0,
+      "rolling_impact_30d": 72.00476923076923
+    },
+    "magadi_road": {
+      "avg_duration": 822.1775330873634,
+      "avg_severity": 1.3729508196721312,
+      "avg_impact": 68.70581967213116,
+      "event_frequency": 244.0,
+      "rolling_impact_30d": 68.51569444444445
+    },
+    "old_madras_road": {
+      "avg_duration": 671.2805532482188,
+      "avg_severity": 1.3778625954198473,
+      "avg_impact": 69.57515267175572,
+      "event_frequency": 262.0,
+      "rolling_impact_30d": 69.77710144927536
+    },
+    "cbd_2": {
+      "avg_duration": 2014.9152816527508,
+      "avg_severity": 1.5242718446601942,
+      "avg_impact": 63.061262135922334,
+      "event_frequency": 103.0,
+      "rolling_impact_30d": 54.269999999999996
+    },
+    "bellary_road_2": {
+      "avg_duration": 625.1914976578483,
+      "avg_severity": 1.4841269841269842,
+      "avg_impact": 72.4891798941799,
+      "event_frequency": 378.0,
+      "rolling_impact_30d": 72.09133333333332
+    },
+    "west_of_chord_road": {
+      "avg_duration": 912.6516169268787,
+      "avg_severity": 1.3583815028901733,
+      "avg_impact": 68.76323699421965,
+      "event_frequency": 173.0,
+      "rolling_impact_30d": 65.35600000000001
+    },
+    "tumkur_road": {
+      "avg_duration": 438.66293352954045,
+      "avg_severity": 1.3194748358862145,
+      "avg_impact": 67.23980306345733,
+      "event_frequency": 457.0,
+      "rolling_impact_30d": 69.05305555555556
+    },
+    "bellary_road_1": {
+      "avg_duration": 578.2203238435961,
+      "avg_severity": 1.4072249589490968,
+      "avg_impact": 70.75311986863711,
+      "event_frequency": 609.0,
+      "rolling_impact_30d": 69.73692307692308
+    },
+    "orr_north_1": {
+      "avg_duration": 643.216538044708,
+      "avg_severity": 1.405109489051095,
+      "avg_impact": 70.5357299270073,
+      "event_frequency": 274.0,
+      "rolling_impact_30d": 68.52944444444444
+    },
+    "non_corridor": {
+      "avg_duration": 1072.510750999258,
+      "avg_severity": 0.515850144092219,
+      "avg_impact": 57.64857829010567,
+      "event_frequency": 3123.0,
+      "rolling_impact_30d": 57.64774966711052
+    }
+  },
+  "junction": {
+    "27th_cross_jayanagar_ganapathi_temple": {
+      "avg_duration": 2450.0516846746914,
+      "avg_severity": 1.0740740740740742,
+      "avg_impact": 64.35444444444444,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.35444444444444
+    },
+    "bhel_gate": {
+      "avg_duration": 1575.0101286748718,
+      "avg_severity": 1.0923076923076922,
+      "avg_impact": 65.56107692307693,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 65.56107692307693
+    },
+    "gowdanapalyajunction": {
+      "avg_duration": 1306.3525052024208,
+      "avg_severity": 1.1620111731843576,
+      "avg_impact": 68.20106145251397,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 68.20106145251397
+    },
+    "tamarikannanjunc": {
+      "avg_duration": 1240.884092555634,
+      "avg_severity": 1.15962441314554,
+      "avg_impact": 67.87859154929578,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 67.87859154929578
+    },
+    "basveshwarnagar_8th_main_junction": {
+      "avg_duration": 1251.7366138335587,
+      "avg_severity": 1.1486486486486487,
+      "avg_impact": 67.68608108108108,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 67.68608108108108
+    },
+    "kuvempucirclejunc_hal_maingate": {
+      "avg_duration": 1160.7888832621213,
+      "avg_severity": 1.1191222570532915,
+      "avg_impact": 67.27112852664577,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 67.27112852664577
+    },
+    "kensingtonovaljunc": {
+      "avg_duration": 1135.3117245582064,
+      "avg_severity": 1.101522842639594,
+      "avg_impact": 66.29185279187817,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 66.29185279187817
+    },
+    "attiguppecirclejunction": {
+      "avg_duration": 960.2947215966424,
+      "avg_severity": 1.0842490842490842,
+      "avg_impact": 65.45571428571428,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 65.45571428571428
+    },
+    "chandralayoutjunc_nearwatertank": {
+      "avg_duration": 150.8777458666667,
+      "avg_severity": 2.0,
+      "avg_impact": 88.86,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 88.86
+    },
+    "gorappanapalyajunction": {
+      "avg_duration": 911.3971764898148,
+      "avg_severity": 1.0990990990990992,
+      "avg_impact": 65.72708708708709,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 65.72708708708709
+    },
+    "ncert_junction": {
+      "avg_duration": 970.6038343798049,
+      "avg_severity": 1.061936936936937,
+      "avg_impact": 64.78406531531532,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.78406531531532
+    },
+    "tvs_crossjunction": {
+      "avg_duration": 957.9725097082736,
+      "avg_severity": 1.0747185261003072,
+      "avg_impact": 65.26705220061413,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 65.26705220061413
+    },
+    "webbscircle": {
+      "avg_duration": 130.20692115,
+      "avg_severity": 2.0,
+      "avg_impact": 86.275,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 86.275
+    },
+    "hallithindi": {
+      "avg_duration": 137.28820176666665,
+      "avg_severity": 0.5,
+      "avg_impact": 59.66,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 59.66
+    },
+    "govindapuracross": {
+      "avg_duration": 893.472373433808,
+      "avg_severity": 1.0592203898050974,
+      "avg_impact": 64.81518740629686,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.81518740629686
+    },
+    "peenya2ndstagebusstand": {
+      "avg_duration": 2883.2729833333333,
+      "avg_severity": 1.0,
+      "avg_impact": 75.0,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 75.0
+    },
+    "pes_devegowdacircle": {
+      "avg_duration": 480.1079441944444,
+      "avg_severity": 1.6666666666666667,
+      "avg_impact": 76.76333333333334,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 76.76333333333334
+    },
+    "kuvempucircle": {
+      "avg_duration": 899.9062086916667,
+      "avg_severity": 2.0,
+      "avg_impact": 87.88,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 87.88
+    },
+    "royancircle_chamrajpete": {
+      "avg_duration": 910.8457742899977,
+      "avg_severity": 1.0674466620784584,
+      "avg_impact": 65.14441156228493,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 65.14441156228493
+    },
+    "manipalcentrejunc": {
+      "avg_duration": 175.92791888333335,
+      "avg_severity": 2.0,
+      "avg_impact": 91.99,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 91.99
+    },
+    "nttf_junctionpeenya": {
+      "avg_duration": 147.57358346666666,
+      "avg_severity": 0.0,
+      "avg_impact": 48.45,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 48.45
+    },
+    "wiprojunc_koramangala": {
+      "avg_duration": 904.103968276862,
+      "avg_severity": 1.0628815628815629,
+      "avg_impact": 65.02871794871794,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 65.02871794871794
+    },
+    "17th_mn_1st_crs_aishwarya_stores_jn": {
+      "avg_duration": 903.2266799851017,
+      "avg_severity": 1.0628048780487804,
+      "avg_impact": 65.04043292682927,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 65.04043292682927
+    },
+    "bellandur_junction_outer_ring_road": {
+      "avg_duration": 98.395530525,
+      "avg_severity": 1.5,
+      "avg_impact": 69.8,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 69.8
+    },
+    "devanahallicrossjunc": {
+      "avg_duration": 123.49946846666668,
+      "avg_severity": 0.0,
+      "avg_impact": 45.44,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 45.44
+    },
+    "mahalaxmilayoutentrancejunc": {
+      "avg_duration": 708.1427712708332,
+      "avg_severity": 1.25,
+      "avg_impact": 69.16,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 69.16
+    },
+    "navarangtheatrejunction": {
+      "avg_duration": 3450.202501077778,
+      "avg_severity": 1.3333333333333333,
+      "avg_impact": 74.61,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 74.61
+    },
+    "dickensonrd_adigasjunc": {
+      "avg_duration": 1035.4609022103975,
+      "avg_severity": 1.0535168195718654,
+      "avg_impact": 63.98806829765545,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 63.98806829765545
+    },
+    "asc_junction": {
+      "avg_duration": 85.47505217499999,
+      "avg_severity": 0.0,
+      "avg_impact": 40.685,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 40.685
+    },
+    "narayanapura_cross_hegde_nagar": {
+      "avg_duration": 142.37192954166667,
+      "avg_severity": 1.5,
+      "avg_impact": 65.295,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 65.295
+    },
+    "loweragaram_indiagarage_junc": {
+      "avg_duration": 66.58828389166666,
+      "avg_severity": 0.5,
+      "avg_impact": 55.825,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 55.825
+    },
+    "minerva_circle": {
+      "avg_duration": 9.065334083333331,
+      "avg_severity": 0.0,
+      "avg_impact": 31.13,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 31.13
+    },
+    "oldmadrasrd_bmtc_depotjunc": {
+      "avg_duration": 989.0221270463788,
+      "avg_severity": 1.0380687093779015,
+      "avg_impact": 63.659851439182916,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 63.659851439182916
+    },
+    "colesparkjunc": {
+      "avg_duration": 986.2824966723041,
+      "avg_severity": 1.043718361711919,
+      "avg_impact": 63.82553152323976,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 63.82553152323976
+    },
+    "platformrdjunction": {
+      "avg_duration": 236.64880205,
+      "avg_severity": 0.6,
+      "avg_impact": 63.534000000000006,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 68.025
+    },
+    "bhadrappalayout": {
+      "avg_duration": 52.3450849,
+      "avg_severity": 1.0,
+      "avg_impact": 61.54,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 61.54
+    },
+    "sonyworldjunction": {
+      "avg_duration": 107.97661566666667,
+      "avg_severity": 1.0,
+      "avg_impact": 48.495,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 48.495
+    },
+    "lalbaghwestgate": {
+      "avg_duration": 979.6278660453809,
+      "avg_severity": 1.0401081568273998,
+      "avg_impact": 63.71114015322217,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 63.71114015322217
+    },
+    "hsr14thmainjunc": {
+      "avg_duration": 60.44188096666667,
+      "avg_severity": 1.0,
+      "avg_impact": 52.555,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 52.555
+    },
+    "kamakyajunction": {
+      "avg_duration": 982.1248966794385,
+      "avg_severity": 1.045129579982127,
+      "avg_impact": 63.88470062555853,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 63.88470062555853
+    },
+    "modihospital": {
+      "avg_duration": 986.2799468752248,
+      "avg_severity": 1.0424590888987173,
+      "avg_impact": 63.788823529411765,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 63.788823529411765
+    },
+    "bamboobazar_shivajinagar": {
+      "avg_duration": 5.45529885,
+      "avg_severity": 0.0,
+      "avg_impact": 40.68,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 40.68
+    },
+    "hainsjunc": {
+      "avg_duration": 2118.427634773333,
+      "avg_severity": 0.4,
+      "avg_impact": 58.802,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 58.802
+    },
+    "cholurpalyajunction_magadird": {
+      "avg_duration": 11.163700416666668,
+      "avg_severity": 1.0,
+      "avg_impact": 46.4,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 46.4
+    },
+    "devanahalli_new_bus_stand": {
+      "avg_duration": 970.0306246940622,
+      "avg_severity": 1.0503685503685503,
+      "avg_impact": 64.04485257985257,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.04485257985257
+    },
+    "kcg_hospitaljunction": {
+      "avg_duration": 10080.0,
+      "avg_severity": 1.0,
+      "avg_impact": 75.0,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 75.0
+    },
+    "urvashijunction": {
+      "avg_duration": 4054.427116136667,
+      "avg_severity": 0.4,
+      "avg_impact": 56.803999999999995,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 42.09
+    },
+    "rajarajeshwarikalyanamantapajunc": {
+      "avg_duration": 965.0243189419965,
+      "avg_severity": 1.0504846526655898,
+      "avg_impact": 64.11231017770598,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.11231017770598
+    },
+    "nationalcollege": {
+      "avg_duration": 968.0395038330292,
+      "avg_severity": 1.0539468464894883,
+      "avg_impact": 64.22199127330425,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.22199127330425
+    },
+    "uco_bank_forum": {
+      "avg_duration": 171.02348788333333,
+      "avg_severity": 1.0,
+      "avg_impact": 66.38,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 66.38
+    },
+    "peenya14thcrossjunc": {
+      "avg_duration": 976.6253173636624,
+      "avg_severity": 1.0534529847834568,
+      "avg_impact": 64.21587592664847,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.21587592664847
+    },
+    "malleswaram18thcrossrd_sampigerdjunc": {
+      "avg_duration": 100.688146725,
+      "avg_severity": 0.75,
+      "avg_impact": 61.335,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 48.97
+    },
+    "garebhavipalyajunc": {
+      "avg_duration": 91.36280530833334,
+      "avg_severity": 1.5,
+      "avg_impact": 68.92,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 74.08
+    },
+    "yemalur_cross_junc": {
+      "avg_duration": 1549.6167924722222,
+      "avg_severity": 1.6666666666666667,
+      "avg_impact": 84.32666666666667,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 98.685
+    },
+    "shivashankara_circle": {
+      "avg_duration": 114.16184907083334,
+      "avg_severity": 0.5,
+      "avg_impact": 58.017500000000005,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 58.017500000000005
+    },
+    "dairycircle": {
+      "avg_duration": 92.22322698333333,
+      "avg_severity": 1.0,
+      "avg_impact": 61.527499999999996,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 61.527499999999996
+    },
+    "dmroadjunc_basavangudi": {
+      "avg_duration": 971.5237752291985,
+      "avg_severity": 1.056316590563166,
+      "avg_impact": 64.26397260273973,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.26397260273973
+    },
+    "sadahalligatejunc_airportrd": {
+      "avg_duration": 643.8758848055555,
+      "avg_severity": 1.5,
+      "avg_impact": 70.89166666666667,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 70.89166666666667
+    },
+    "yediyurmeternityhospital": {
+      "avg_duration": 976.4158076216711,
+      "avg_severity": 1.0520252694165737,
+      "avg_impact": 64.16724637681159,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.16724637681159
+    },
+    "indiranasgar13thmainjunc": {
+      "avg_duration": 74.07936666666666,
+      "avg_severity": 2.0,
+      "avg_impact": 74.26,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 74.26
+    },
+    "south_end_circle": {
+      "avg_duration": 126.21013678333333,
+      "avg_severity": 0.0,
+      "avg_impact": 45.78,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 45.72
+    },
+    "adugodijunc": {
+      "avg_duration": 31.40482066666667,
+      "avg_severity": 1.0,
+      "avg_impact": 48.93,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 48.93
+    },
+    "rajajinagagr1stblockjunction": {
+      "avg_duration": 153.97566743333334,
+      "avg_severity": 1.0,
+      "avg_impact": 64.25,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 64.25
+    },
+    "ashirwadamcircle": {
+      "avg_duration": 2625.4907860083335,
+      "avg_severity": 1.25,
+      "avg_impact": 71.935,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 71.935
+    },
+    "modibridgejunction": {
+      "avg_duration": 12.571529033333334,
+      "avg_severity": 1.0,
+      "avg_impact": 56.57,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 56.57
+    },
+    "jayanagar_4th_main_36th_cross": {
+      "avg_duration": 56.05031413333334,
+      "avg_severity": 0.0,
+      "avg_impact": 47.01,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 47.01
+    },
+    "isro_junction_newbel_rd": {
+      "avg_duration": 967.1689990045519,
+      "avg_severity": 1.0545518951470068,
+      "avg_impact": 64.25829968119022,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.25829968119022
+    },
+    "linkroadmalleswaramjunc": {
+      "avg_duration": 31.1872376,
+      "avg_severity": 0.0,
+      "avg_impact": 43.9,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 43.9
+    },
+    "shankarmuttcircle": {
+      "avg_duration": 38.99322239166666,
+      "avg_severity": 0.0,
+      "avg_impact": 39.870000000000005,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 39.870000000000005
+    },
+    "navarangbarjunc_dr_rajkumarrd": {
+      "avg_duration": 10080.0,
+      "avg_severity": 2.0,
+      "avg_impact": 100.0,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 100.0
+    },
+    "minsksquare_cto_junction": {
+      "avg_duration": 119.69723761904763,
+      "avg_severity": 1.7142857142857142,
+      "avg_impact": 67.0,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 67.22833333333334
+    },
+    "subbannajunction": {
+      "avg_duration": 5110.130238208333,
+      "avg_severity": 0.875,
+      "avg_impact": 70.59875,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 60.79833333333334
+    },
+    "bmtcjunction_k_h_road": {
+      "avg_duration": 1196.3217643055555,
+      "avg_severity": 0.4444444444444444,
+      "avg_impact": 55.650000000000006,
+      "event_frequency": 9.0,
+      "rolling_impact_30d": 63.81
+    },
+    "dr_tcm_royanrd_near_ambedkarstatue": {
+      "avg_duration": 1227.269690398485,
+      "avg_severity": 1.0909090909090908,
+      "avg_impact": 65.00727272727273,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 69.61222222222221
+    },
+    "commandohospitaljunc": {
+      "avg_duration": 95.71540340666667,
+      "avg_severity": 0.4,
+      "avg_impact": 53.964,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 42.873333333333335
+    },
+    "gopalgowdajunc": {
+      "avg_duration": 173.13542669166668,
+      "avg_severity": 1.0,
+      "avg_impact": 76.64,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 76.64
+    },
+    "geethanjali_jn": {
+      "avg_duration": 30.0,
+      "avg_severity": 0.0,
+      "avg_impact": 33.75,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 33.75
+    },
+    "sandeepunnikrishnan_yelhanka": {
+      "avg_duration": 830.5849289761906,
+      "avg_severity": 0.7142857142857143,
+      "avg_impact": 61.714285714285715,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 66.352
+    },
+    "basaweshwaracircle": {
+      "avg_duration": 108.7583935625,
+      "avg_severity": 1.75,
+      "avg_impact": 77.345,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 77.345
+    },
+    "dhobighatjunc": {
+      "avg_duration": 135.97842046944444,
+      "avg_severity": 1.0,
+      "avg_impact": 61.99666666666667,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 64.765
+    },
+    "hennurrd_davisrdjunction": {
+      "avg_duration": 8376.456980870833,
+      "avg_severity": 2.0,
+      "avg_impact": 97.5,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 97.5
+    },
+    "hoodijunction": {
+      "avg_duration": 2088.5580111233335,
+      "avg_severity": 0.8,
+      "avg_impact": 65.07000000000001,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 65.07000000000001
+    },
+    "bucheryjunction": {
+      "avg_duration": 2075.117659151667,
+      "avg_severity": 0.5,
+      "avg_impact": 53.888999999999996,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 54.193333333333335
+    },
+    "johnsonmarket": {
+      "avg_duration": 5075.1860211,
+      "avg_severity": 1.5,
+      "avg_impact": 76.9,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 76.9
+    },
+    "puttammachoultrynagarbhavi": {
+      "avg_duration": 163.51420103333334,
+      "avg_severity": 1.0,
+      "avg_impact": 65.44,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 65.44
+    },
+    "sagarhospitaljunc": {
+      "avg_duration": 150.93363394166667,
+      "avg_severity": 1.0,
+      "avg_impact": 63.8675,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 63.8675
+    },
+    "bda_junctio_koramangala": {
+      "avg_duration": 9.523848916666669,
+      "avg_severity": 1.2,
+      "avg_impact": 42.190000000000005,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 42.190000000000005
+    },
+    "vishweswaraiahjunctio_uttamsagar": {
+      "avg_duration": 958.066927425782,
+      "avg_severity": 1.0538057742782152,
+      "avg_impact": 64.32965223097113,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.32965223097113
+    },
+    "statebankofmysorejunc": {
+      "avg_duration": 65.33227223636364,
+      "avg_severity": 0.09090909090909091,
+      "avg_impact": 41.34909090909091,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 44.03142857142858
+    },
+    "maharajajunction": {
+      "avg_duration": 33.47803065,
+      "avg_severity": 0.0,
+      "avg_impact": 44.18,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 44.18
+    },
+    "bhashyamcircle_sadashivnagar": {
+      "avg_duration": 59.79332080555556,
+      "avg_severity": 0.0,
+      "avg_impact": 37.47666666666667,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 37.47666666666667
+    },
+    "ringroad_ullaljunction": {
+      "avg_duration": 1800.7224170694444,
+      "avg_severity": 0.5,
+      "avg_impact": 58.830000000000005,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 58.830000000000005
+    },
+    "devegowdapetrolbunkjunc": {
+      "avg_duration": 130.66156371666665,
+      "avg_severity": 2.0,
+      "avg_impact": 86.33,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 86.33
+    },
+    "bigbazaar_whitefield_junc": {
+      "avg_duration": 1545.1230924071428,
+      "avg_severity": 0.5714285714285714,
+      "avg_impact": 61.54857142857143,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 62.507999999999996
+    },
+    "tc_palya_om_roadjunc": {
+      "avg_duration": 3468.8553241944446,
+      "avg_severity": 0.3333333333333333,
+      "avg_impact": 61.94333333333333,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 50.415
+    },
+    "electroniccitygate_2junc": {
+      "avg_duration": 78.49931591333333,
+      "avg_severity": 0.2,
+      "avg_impact": 44.814,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 36.015
+    },
+    "5thmainhsr": {
+      "avg_duration": 5040.525275,
+      "avg_severity": 2.0,
+      "avg_impact": 82.565,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 82.565
+    },
+    "shivanahallijunctionwoc": {
+      "avg_duration": 116.114882525,
+      "avg_severity": 1.5,
+      "avg_impact": 74.50999999999999,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 74.50999999999999
+    },
+    "peenyapolicestation": {
+      "avg_duration": 315.2440249742424,
+      "avg_severity": 1.0909090909090908,
+      "avg_impact": 62.07636363636364,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 66.60714285714286
+    },
+    "upparpetjunction": {
+      "avg_duration": 10080.0,
+      "avg_severity": 2.0,
+      "avg_impact": 100.0,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 100.0
+    },
+    "esi_k_r_puram": {
+      "avg_duration": 953.6759371299659,
+      "avg_severity": 1.058038485412787,
+      "avg_impact": 64.5454034761018,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.5454034761018
+    },
+    "khb_junction": {
+      "avg_duration": 953.4344690153531,
+      "avg_severity": 1.0577102078808562,
+      "avg_impact": 64.54148929568724,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.54148929568724
+    },
+    "chaudrayacircle_udayatvcircle_cantonmentjunc": {
+      "avg_duration": 3421.0303499305555,
+      "avg_severity": 0.3333333333333333,
+      "avg_impact": 52.629999999999995,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 41.445
+    },
+    "purnimatheaterjunc": {
+      "avg_duration": 565.2590196547619,
+      "avg_severity": 0.2857142857142857,
+      "avg_impact": 57.07857142857142,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 54.938
+    },
+    "kammanahalli_ringroadjunction": {
+      "avg_duration": 83.34565302222222,
+      "avg_severity": 1.3333333333333333,
+      "avg_impact": 67.08666666666666,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 72.42
+    },
+    "bagalakuntecrossjunction": {
+      "avg_duration": 10080.0,
+      "avg_severity": 1.0,
+      "avg_impact": 75.0,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 75.0
+    },
+    "msramaiahhospitaljunc": {
+      "avg_duration": 952.0745011733792,
+      "avg_severity": 1.0590214067278287,
+      "avg_impact": 64.5640244648318,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.5640244648318
+    },
+    "basavamantapajunc_dr_rajkumarrd": {
+      "avg_duration": 16.8068625,
+      "avg_severity": 0.0,
+      "avg_impact": 32.1,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 32.1
+    },
+    "cil_crossjunction_jayamahalrd": {
+      "avg_duration": 1152.6055367666668,
+      "avg_severity": 0.6666666666666666,
+      "avg_impact": 67.18666666666667,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 67.18666666666667
+    },
+    "veerannapalyajunction_bel_ho": {
+      "avg_duration": 1136.6391127247125,
+      "avg_severity": 1.4482758620689655,
+      "avg_impact": 73.46241379310344,
+      "event_frequency": 29.0,
+      "rolling_impact_30d": 67.33583333333333
+    },
+    "sindhicolonyjunction": {
+      "avg_duration": 5075.757521220833,
+      "avg_severity": 0.625,
+      "avg_impact": 62.595,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 64.57285714285715
+    },
+    "hunsemarammanahallijunction": {
+      "avg_duration": 226.1485893722222,
+      "avg_severity": 1.6666666666666667,
+      "avg_impact": 76.21833333333333,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 91.19
+    },
+    "arts_craftscircle": {
+      "avg_duration": 151.00296773333332,
+      "avg_severity": 2.0,
+      "avg_impact": 88.88,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 88.88
+    },
+    "mysorerd_madhupetrolbunkjunction": {
+      "avg_duration": 68.97709453888889,
+      "avg_severity": 2.0,
+      "avg_impact": 85.29,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 85.29
+    },
+    "lrde_junction": {
+      "avg_duration": 104.96726203124999,
+      "avg_severity": 1.375,
+      "avg_impact": 69.9975,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 72.3
+    },
+    "delmia_jayanagar": {
+      "avg_duration": 5121.862749366666,
+      "avg_severity": 2.0,
+      "avg_impact": 90.235,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 90.235
+    },
+    "ashoknagar_junction_shoolaycircle": {
+      "avg_duration": 123.66392820000002,
+      "avg_severity": 1.6,
+      "avg_impact": 77.458,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 73.405
+    },
+    "krupanidhi_college": {
+      "avg_duration": 65.1343383625,
+      "avg_severity": 0.25,
+      "avg_impact": 50.645,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 40.37
+    },
+    "wilsongarden12thcrossjunc": {
+      "avg_duration": 113.76782711428571,
+      "avg_severity": 0.42857142857142855,
+      "avg_impact": 56.34428571428571,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 57.707499999999996
+    },
+    "uttarahallijunction": {
+      "avg_duration": 4827.931155423809,
+      "avg_severity": 0.7142857142857143,
+      "avg_impact": 66.21642857142857,
+      "event_frequency": 14.0,
+      "rolling_impact_30d": 70.201
+    },
+    "rajajinagarentrancejunction": {
+      "avg_duration": 66.763502025,
+      "avg_severity": 0.0,
+      "avg_impact": 38.345,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 30.12
+    },
+    "anepalyajunc": {
+      "avg_duration": 3990.8641680766677,
+      "avg_severity": 1.6,
+      "avg_impact": 81.15,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 81.15
+    },
+    "fire_force_junction": {
+      "avg_duration": 9.58248465,
+      "avg_severity": 1.0,
+      "avg_impact": 46.2,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 46.2
+    },
+    "hulimaverd_banneraghattardjunc": {
+      "avg_duration": 1287.2681969645832,
+      "avg_severity": 1.125,
+      "avg_impact": 57.78375,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 60.288333333333334
+    },
+    "jaimuniraocircle": {
+      "avg_duration": 45.21996013333333,
+      "avg_severity": 1.25,
+      "avg_impact": 61.9025,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 82.54
+    },
+    "mintojunction": {
+      "avg_duration": 2618.4903918791665,
+      "avg_severity": 0.5,
+      "avg_impact": 62.3125,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 54.75
+    },
+    "bhashyamcircle": {
+      "avg_duration": 30.067592125,
+      "avg_severity": 0.0,
+      "avg_impact": 33.760000000000005,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 33.760000000000005
+    },
+    "tatainstitutecircle": {
+      "avg_duration": 1911.2615900560609,
+      "avg_severity": 1.2727272727272727,
+      "avg_impact": 68.90727272727273,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 67.8575
+    },
+    "beml_gatejunc_suranjandasrd": {
+      "avg_duration": 2.6516332666666664,
+      "avg_severity": 0.0,
+      "avg_impact": 40.33,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 40.33
+    },
+    "wilsongarden10thcrossjunc": {
+      "avg_duration": 2096.5614981733333,
+      "avg_severity": 0.2,
+      "avg_impact": 51.07,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 46.32
+    },
+    "ring_road_near_kengunte_junction": {
+      "avg_duration": 110.43044647777778,
+      "avg_severity": 0.16666666666666666,
+      "avg_impact": 47.97,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 47.97
+    },
+    "k_r_marketjunction": {
+      "avg_duration": 128.72399124166665,
+      "avg_severity": 1.8333333333333333,
+      "avg_impact": 81.325,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 80.114
+    },
+    "oldmadrasrd_suddaguntepalyardjunc": {
+      "avg_duration": 125.10829655833334,
+      "avg_severity": 1.0,
+      "avg_impact": 60.64,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 66.4
+    },
+    "bm_shrijunc_cmh_100ftrd_junc": {
+      "avg_duration": 278.5536309083334,
+      "avg_severity": 1.5,
+      "avg_impact": 75.21000000000001,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 75.21000000000001
+    },
+    "shivajitalkiesjunc": {
+      "avg_duration": 87.29447430833333,
+      "avg_severity": 1.5,
+      "avg_impact": 70.91333333333334,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 70.385
+    },
+    "agarajunction": {
+      "avg_duration": 180.27537975,
+      "avg_severity": 1.4,
+      "avg_impact": 75.09,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 59.575
+    },
+    "thomascafe_new": {
+      "avg_duration": 953.9682455452443,
+      "avg_severity": 1.0654933641084825,
+      "avg_impact": 64.78121465666474,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.78121465666474
+    },
+    "itmadujunction": {
+      "avg_duration": 87.62590053333334,
+      "avg_severity": 1.0,
+      "avg_impact": 57.95399999999999,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 59.400000000000006
+    },
+    "j_d_marajunc": {
+      "avg_duration": 226.08161977499998,
+      "avg_severity": 1.5,
+      "avg_impact": 81.305,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 81.305
+    },
+    "kudlu_gate_junc": {
+      "avg_duration": 76.21332056,
+      "avg_severity": 1.4,
+      "avg_impact": 68.526,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 71.8225
+    },
+    "oldpolicestation_ashoknagar": {
+      "avg_duration": 67.92161519999999,
+      "avg_severity": 1.0,
+      "avg_impact": 53.4875,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 48.519999999999996
+    },
+    "ms_ramaiahjunc_tollgate": {
+      "avg_duration": 351.0137516883334,
+      "avg_severity": 1.5,
+      "avg_impact": 70.625,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 68.64399999999999
+    },
+    "oldmadrasrd_indranagar100ftrdjunc": {
+      "avg_duration": 50.232880715151516,
+      "avg_severity": 1.1818181818181819,
+      "avg_impact": 61.27818181818182,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 55.707499999999996
+    },
+    "anandraojunction": {
+      "avg_duration": 110.90700840833334,
+      "avg_severity": 0.6666666666666666,
+      "avg_impact": 60.53,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 60.53
+    },
+    "marenahallird_18thmainrdjunc": {
+      "avg_duration": 1.0,
+      "avg_severity": 0.0,
+      "avg_impact": 40.12,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 40.12
+    },
+    "doddaballapuracrossjunc": {
+      "avg_duration": 106.89154063333334,
+      "avg_severity": 0.5,
+      "avg_impact": 55.86,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 76.55
+    },
+    "maratahallibridgejunc": {
+      "avg_duration": 983.8324057988889,
+      "avg_severity": 1.6,
+      "avg_impact": 72.096,
+      "event_frequency": 15.0,
+      "rolling_impact_30d": 68.47333333333334
+    },
+    "kalyannagar_orr_junc": {
+      "avg_duration": 121.68602375999998,
+      "avg_severity": 1.2,
+      "avg_impact": 66.212,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 60.21
+    },
+    "sirsicircle": {
+      "avg_duration": 47.31620716875,
+      "avg_severity": 1.25,
+      "avg_impact": 58.41375,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 62.79333333333333
+    },
+    "28thmainjayanagarjunc": {
+      "avg_duration": 4037.3462866366667,
+      "avg_severity": 0.6,
+      "avg_impact": 53.668000000000006,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 50.49666666666667
+    },
+    "dr_rajkumarrd_10thcrossrdjunc": {
+      "avg_duration": 135.27546740833333,
+      "avg_severity": 1.75,
+      "avg_impact": 84.3075,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 79.07666666666667
+    },
+    "universityjunc_janabharti": {
+      "avg_duration": 642.76014902,
+      "avg_severity": 1.4,
+      "avg_impact": 73.841,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 75.36888888888888
+    },
+    "tumkurrdmarappanapalyajunc": {
+      "avg_duration": 65.71203833974359,
+      "avg_severity": 1.0,
+      "avg_impact": 57.82846153846154,
+      "event_frequency": 13.0,
+      "rolling_impact_30d": 61.06875
+    },
+    "5thmainrpc_layout_vijayanagar": {
+      "avg_duration": 95.64943385833334,
+      "avg_severity": 1.0,
+      "avg_impact": 56.955,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 56.955
+    },
+    "siddalingaiahcircle": {
+      "avg_duration": 321.91204783499995,
+      "avg_severity": 1.4,
+      "avg_impact": 69.182,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 76.93666666666667
+    },
+    "oldmadrasrd_doublerdjunc": {
+      "avg_duration": 6.926453516666666,
+      "avg_severity": 1.0,
+      "avg_impact": 45.865,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 46.34
+    },
+    "biryandcircle": {
+      "avg_duration": 84.32283302083333,
+      "avg_severity": 1.0,
+      "avg_impact": 60.54,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 60.54
+    },
+    "k_g_junction": {
+      "avg_duration": 927.7156586020787,
+      "avg_severity": 1.06510989010989,
+      "avg_impact": 64.91560714285714,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.91560714285714
+    },
+    "cashpharmacyjunction": {
+      "avg_duration": 87.58709489166667,
+      "avg_severity": 1.0,
+      "avg_impact": 60.945,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 60.945
+    },
+    "policetimmaiahcircle_gpo": {
+      "avg_duration": 845.6309569692307,
+      "avg_severity": 1.3076923076923077,
+      "avg_impact": 53.78076923076923,
+      "event_frequency": 13.0,
+      "rolling_impact_30d": 53.626666666666665
+    },
+    "n_r_squarejunc": {
+      "avg_duration": 81.3021424574074,
+      "avg_severity": 1.2222222222222223,
+      "avg_impact": 62.385555555555555,
+      "event_frequency": 9.0,
+      "rolling_impact_30d": 48.474999999999994
+    },
+    "kadubeesanahalli_orr_junc": {
+      "avg_duration": 1323.0609423363637,
+      "avg_severity": 1.1818181818181819,
+      "avg_impact": 65.74181818181818,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 66.868
+    },
+    "anjaneyatemplejunc": {
+      "avg_duration": 152.91769598333332,
+      "avg_severity": 1.0,
+      "avg_impact": 64.11500000000001,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 64.11500000000001
+    },
+    "shivajinagar_brv_junction": {
+      "avg_duration": 751.3466379288889,
+      "avg_severity": 1.2666666666666666,
+      "avg_impact": 62.251333333333335,
+      "event_frequency": 15.0,
+      "rolling_impact_30d": 60.33909090909091
+    },
+    "kundanahalligatejunc": {
+      "avg_duration": 153.48368851166668,
+      "avg_severity": 1.3,
+      "avg_impact": 57.345000000000006,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 43.70333333333334
+    },
+    "coffeeboardjunc": {
+      "avg_duration": 5807.363613478571,
+      "avg_severity": 1.7142857142857142,
+      "avg_impact": 73.06428571428572,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 78.348
+    },
+    "jaipuria_adugodi": {
+      "avg_duration": 3413.3691621111116,
+      "avg_severity": 1.6666666666666667,
+      "avg_impact": 65.00666666666666,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 78.68
+    },
+    "trilight_circle_race_course_road": {
+      "avg_duration": 10080.0,
+      "avg_severity": 2.0,
+      "avg_impact": 100.0,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 100.0
+    },
+    "ulsoorgatejunc": {
+      "avg_duration": 89.64622426060606,
+      "avg_severity": 1.4545454545454546,
+      "avg_impact": 67.50636363636364,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 69.22142857142856
+    },
+    "bloodbankcircle": {
+      "avg_duration": 3661.7308576940477,
+      "avg_severity": 0.8571428571428571,
+      "avg_impact": 65.57357142857143,
+      "event_frequency": 14.0,
+      "rolling_impact_30d": 57.37571428571429
+    },
+    "potterycircle": {
+      "avg_duration": 2630.3816101875,
+      "avg_severity": 1.0,
+      "avg_impact": 75.0475,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 82.445
+    },
+    "mayohalljunction": {
+      "avg_duration": 73.41336798333333,
+      "avg_severity": 1.0,
+      "avg_impact": 54.175,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 50.98
+    },
+    "basappa_circle_junction": {
+      "avg_duration": 98.60982235833332,
+      "avg_severity": 0.5,
+      "avg_impact": 54.83,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 54.83
+    },
+    "shivandacircle": {
+      "avg_duration": 94.75084004696969,
+      "avg_severity": 0.09090909090909091,
+      "avg_impact": 44.11545454545455,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 38.654
+    },
+    "jp_nagar_9th_cross_24th_main_jn": {
+      "avg_duration": 133.93316388333335,
+      "avg_severity": 1.0,
+      "avg_impact": 72.935,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 72.935
+    },
+    "bel_circle": {
+      "avg_duration": 994.4113285104168,
+      "avg_severity": 1.5,
+      "avg_impact": 73.535,
+      "event_frequency": 24.0,
+      "rolling_impact_30d": 74.674
+    },
+    "fti_junction_kanteeravastudio": {
+      "avg_duration": 384.47027111833336,
+      "avg_severity": 0.6,
+      "avg_impact": 60.42,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 85.45
+    },
+    "karnatakabhavanjunction": {
+      "avg_duration": 668.0744422395833,
+      "avg_severity": 0.375,
+      "avg_impact": 54.69375,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 60.655
+    },
+    "ramamurthynagarjunction": {
+      "avg_duration": 67.05520408958333,
+      "avg_severity": 1.25,
+      "avg_impact": 62.13125,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 65.52666666666666
+    },
+    "sadashivnagarjunc": {
+      "avg_duration": 193.16852259444445,
+      "avg_severity": 0.9166666666666666,
+      "avg_impact": 66.90416666666667,
+      "event_frequency": 12.0,
+      "rolling_impact_30d": 83.28500000000001
+    },
+    "a_s_charstreet_mysorerdjunc": {
+      "avg_duration": 2552.328012325,
+      "avg_severity": 1.5,
+      "avg_impact": 69.0425,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 68.455
+    },
+    "katriguppejunction": {
+      "avg_duration": 1893.672998568182,
+      "avg_severity": 1.2727272727272727,
+      "avg_impact": 68.52727272727272,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 69.005
+    },
+    "prasannajunction": {
+      "avg_duration": 72.50644023666668,
+      "avg_severity": 1.2,
+      "avg_impact": 61.064,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 73.265
+    },
+    "kodigehallicross": {
+      "avg_duration": 144.17145106,
+      "avg_severity": 1.1,
+      "avg_impact": 66.521,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 70.67333333333333
+    },
+    "srinivagilu_ejipura_junc": {
+      "avg_duration": 2413.5560290055555,
+      "avg_severity": 1.3333333333333333,
+      "avg_impact": 58.21,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 63.91
+    },
+    "rajeshwarijunc": {
+      "avg_duration": 593.359855413492,
+      "avg_severity": 1.5238095238095237,
+      "avg_impact": 76.77047619047619,
+      "event_frequency": 21.0,
+      "rolling_impact_30d": 77.85000000000001
+    },
+    "subedarchatramrd_near_sheshadripuramps": {
+      "avg_duration": 4251.613670433333,
+      "avg_severity": 1.0,
+      "avg_impact": 71.42857142857143,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 67.0975
+    },
+    "cmh_rd_adarshtheaterjunc": {
+      "avg_duration": 117.90481841666667,
+      "avg_severity": 1.25,
+      "avg_impact": 59.125,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 59.125
+    },
+    "begummahaljunc": {
+      "avg_duration": 595.6141875166667,
+      "avg_severity": 1.0,
+      "avg_impact": 64.04,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 64.04
+    },
+    "oldmadrasrd_ngef_junc": {
+      "avg_duration": 132.20138504285714,
+      "avg_severity": 1.5714285714285714,
+      "avg_impact": 77.85285714285715,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 83.565
+    },
+    "toll_gate_mysore_road": {
+      "avg_duration": 196.0522230765625,
+      "avg_severity": 1.34375,
+      "avg_impact": 69.66,
+      "event_frequency": 32.0,
+      "rolling_impact_30d": 77.79666666666667
+    },
+    "ngv_reargatejunc": {
+      "avg_duration": 10080.0,
+      "avg_severity": 1.0,
+      "avg_impact": 85.0,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 85.0
+    },
+    "kamrajrdjunction": {
+      "avg_duration": 75.22707094583333,
+      "avg_severity": 1.25,
+      "avg_impact": 63.155,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 50.94
+    },
+    "operahousejunc": {
+      "avg_duration": 1170.96724925,
+      "avg_severity": 1.4,
+      "avg_impact": 73.966,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 76.0175
+    },
+    "chandrikajunction": {
+      "avg_duration": 23.29224866666667,
+      "avg_severity": 0.0,
+      "avg_impact": 42.91,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 42.91
+    },
+    "d_souzacircle": {
+      "avg_duration": 152.26611847222222,
+      "avg_severity": 0.6666666666666666,
+      "avg_impact": 65.7,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 58.31
+    },
+    "oldmadrasrd_80feetrdjunc": {
+      "avg_duration": 154.52313281666667,
+      "avg_severity": 1.8571428571428572,
+      "avg_impact": 86.45857142857143,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 83.9075
+    },
+    "vijayanagarbusstandjunction": {
+      "avg_duration": 40.100039609999996,
+      "avg_severity": 1.0,
+      "avg_impact": 52.013999999999996,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 53.582499999999996
+    },
+    "nimhans_junction": {
+      "avg_duration": 130.46653769,
+      "avg_severity": 0.4,
+      "avg_impact": 56.862,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 69.645
+    },
+    "elitejunc": {
+      "avg_duration": 69.73263875666666,
+      "avg_severity": 0.2,
+      "avg_impact": 45.718,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 49.3275
+    },
+    "geeta_circle": {
+      "avg_duration": 926.5040897764421,
+      "avg_severity": 1.066839378238342,
+      "avg_impact": 64.97836787564766,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.97836787564766
+    },
+    "sattelitebusstandjunc": {
+      "avg_duration": 447.37608692023815,
+      "avg_severity": 1.2857142857142858,
+      "avg_impact": 66.62380952380951,
+      "event_frequency": 42.0,
+      "rolling_impact_30d": 68.278
+    },
+    "srigandakaval": {
+      "avg_duration": 867.066094747436,
+      "avg_severity": 1.3846153846153846,
+      "avg_impact": 68.38307692307693,
+      "event_frequency": 13.0,
+      "rolling_impact_30d": 71.42857142857143
+    },
+    "swagathmainrd_eastendrdjunc": {
+      "avg_duration": 10080.0,
+      "avg_severity": 2.0,
+      "avg_impact": 100.0,
+      "event_frequency": 1.0,
+      "rolling_impact_30d": 100.0
+    },
+    "rrr_okalipuram_junction": {
+      "avg_duration": 99.42359187666666,
+      "avg_severity": 0.4,
+      "avg_impact": 54.42999999999999,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 45.099999999999994
+    },
+    "policecornerjunc": {
+      "avg_duration": 479.18872541933337,
+      "avg_severity": 1.2,
+      "avg_impact": 63.7004,
+      "event_frequency": 25.0,
+      "rolling_impact_30d": 62.65375
+    },
+    "margosard_18thcrossjunc": {
+      "avg_duration": 56.23187131666666,
+      "avg_severity": 0.2,
+      "avg_impact": 46.029999999999994,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 46.029999999999994
+    },
+    "mico_bande": {
+      "avg_duration": 2100.19663891,
+      "avg_severity": 0.6,
+      "avg_impact": 61.524,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 51.153333333333336
+    },
+    "bigbazaarjunction_oldmadrasrd": {
+      "avg_duration": 135.22727089466667,
+      "avg_severity": 1.24,
+      "avg_impact": 69.3032,
+      "event_frequency": 25.0,
+      "rolling_impact_30d": 70.23181818181818
+    },
+    "shantalajunction": {
+      "avg_duration": 1541.1128692642856,
+      "avg_severity": 0.5,
+      "avg_impact": 57.43571428571429,
+      "event_frequency": 14.0,
+      "rolling_impact_30d": 49.48428571428572
+    },
+    "ramaiahcircle_ulsoorpolicestation": {
+      "avg_duration": 1372.9965859125,
+      "avg_severity": 1.5,
+      "avg_impact": 75.37625,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 78.88571428571429
+    },
+    "millcornerrd_sampigerdjunc": {
+      "avg_duration": 144.53691588750002,
+      "avg_severity": 0.0,
+      "avg_impact": 48.067499999999995,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 48.067499999999995
+    },
+    "banashankaribusstandjunc": {
+      "avg_duration": 1229.7284495222223,
+      "avg_severity": 0.75,
+      "avg_impact": 66.56666666666666,
+      "event_frequency": 12.0,
+      "rolling_impact_30d": 56.9575
+    },
+    "cid_carltonhousejunc": {
+      "avg_duration": 1386.4272276916665,
+      "avg_severity": 0.5,
+      "avg_impact": 60.80375,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 61.0325
+    },
+    "hebbalflyoverjunc": {
+      "avg_duration": 1609.8632753697532,
+      "avg_severity": 1.4074074074074074,
+      "avg_impact": 70.85074074074075,
+      "event_frequency": 27.0,
+      "rolling_impact_30d": 79.92999999999999
+    },
+    "kanakapurard_ringrdjunction": {
+      "avg_duration": 113.91139447083333,
+      "avg_severity": 1.125,
+      "avg_impact": 66.11375,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 73.36500000000001
+    },
+    "marigowda_tavarkererdjunc": {
+      "avg_duration": 239.60776804444444,
+      "avg_severity": 0.8333333333333334,
+      "avg_impact": 62.836666666666666,
+      "event_frequency": 12.0,
+      "rolling_impact_30d": 69.03499999999998
+    },
+    "horamavujunction": {
+      "avg_duration": 152.54794804545455,
+      "avg_severity": 1.5454545454545454,
+      "avg_impact": 74.2009090909091,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 69.29400000000001
+    },
+    "brigademillenium": {
+      "avg_duration": 933.2030280930538,
+      "avg_severity": 1.0652561814937547,
+      "avg_impact": 64.96708641345909,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.96708641345909
+    },
+    "nagatheaterjunc_ulsoor": {
+      "avg_duration": 935.408693913245,
+      "avg_severity": 1.0657157412124298,
+      "avg_impact": 64.98638053998981,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.98638053998981
+    },
+    "hopefarmjunction": {
+      "avg_duration": 404.4720898611111,
+      "avg_severity": 0.6666666666666666,
+      "avg_impact": 67.64555555555555,
+      "event_frequency": 9.0,
+      "rolling_impact_30d": 61.295
+    },
+    "tyagihengalvarayajunc_dickensonrd": {
+      "avg_duration": 52.51924925416667,
+      "avg_severity": 1.0,
+      "avg_impact": 41.5625,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 38.685
+    },
+    "koramangalawatertankjunc": {
+      "avg_duration": 758.9951964071428,
+      "avg_severity": 1.1785714285714286,
+      "avg_impact": 48.980357142857144,
+      "event_frequency": 28.0,
+      "rolling_impact_30d": 78.732
+    },
+    "kimco_junction": {
+      "avg_duration": 350.7199829011111,
+      "avg_severity": 1.5666666666666667,
+      "avg_impact": 74.91033333333333,
+      "event_frequency": 30.0,
+      "rolling_impact_30d": 73.86200000000001
+    },
+    "deverabeesanahalli_orr_junc": {
+      "avg_duration": 832.5065263619047,
+      "avg_severity": 1.6428571428571428,
+      "avg_impact": 77.92642857142857,
+      "event_frequency": 14.0,
+      "rolling_impact_30d": 69.208
+    },
+    "veerasandragatejunction": {
+      "avg_duration": 1114.0132570733333,
+      "avg_severity": 0.5,
+      "avg_impact": 58.753,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 58.098333333333336
+    },
+    "santhecircle": {
+      "avg_duration": 1400.48223148125,
+      "avg_severity": 1.625,
+      "avg_impact": 79.80958333333334,
+      "event_frequency": 24.0,
+      "rolling_impact_30d": 86.127
+    },
+    "hudsoncircle": {
+      "avg_duration": 786.2741883944443,
+      "avg_severity": 1.4,
+      "avg_impact": 72.36,
+      "event_frequency": 15.0,
+      "rolling_impact_30d": 81.80428571428571
+    },
+    "srs_peenya_junc": {
+      "avg_duration": 595.5833327464912,
+      "avg_severity": 1.1578947368421053,
+      "avg_impact": 61.026315789473685,
+      "event_frequency": 19.0,
+      "rolling_impact_30d": 66.55333333333334
+    },
+    "jakkurcrossjunction": {
+      "avg_duration": 118.42858173431372,
+      "avg_severity": 1.5294117647058822,
+      "avg_impact": 73.25647058823529,
+      "event_frequency": 17.0,
+      "rolling_impact_30d": 69.0
+    },
+    "sagartheatrejunc": {
+      "avg_duration": 628.3902335233332,
+      "avg_severity": 0.4,
+      "avg_impact": 47.534000000000006,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 33.685
+    },
+    "sumanhalli": {
+      "avg_duration": 760.8587998566667,
+      "avg_severity": 1.2,
+      "avg_impact": 64.77333333333334,
+      "event_frequency": 15.0,
+      "rolling_impact_30d": 64.3325
+    },
+    "ibblurjunction": {
+      "avg_duration": 1262.021220025,
+      "avg_severity": 1.5,
+      "avg_impact": 74.59333333333333,
+      "event_frequency": 12.0,
+      "rolling_impact_30d": 76.94
+    },
+    "sarjapurrd_st_johnsrdjunc": {
+      "avg_duration": 1157.9939360870371,
+      "avg_severity": 1.3333333333333333,
+      "avg_impact": 60.30444444444444,
+      "event_frequency": 9.0,
+      "rolling_impact_30d": 68.075
+    },
+    "devasandra_k_r_puram": {
+      "avg_duration": 1065.2398948816094,
+      "avg_severity": 0.5862068965517241,
+      "avg_impact": 60.59551724137931,
+      "event_frequency": 29.0,
+      "rolling_impact_30d": 59.43272727272727
+    },
+    "domlurwatertank": {
+      "avg_duration": 153.2991393060606,
+      "avg_severity": 1.1818181818181819,
+      "avg_impact": 67.64,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 62.550000000000004
+    },
+    "yelhankacircle": {
+      "avg_duration": 1298.3739569151514,
+      "avg_severity": 1.303030303030303,
+      "avg_impact": 66.03939393939395,
+      "event_frequency": 33.0,
+      "rolling_impact_30d": 67.55909090909091
+    },
+    "chokasandra_tumkur_road": {
+      "avg_duration": 534.6488147564103,
+      "avg_severity": 1.3076923076923077,
+      "avg_impact": 67.40615384615384,
+      "event_frequency": 13.0,
+      "rolling_impact_30d": 68.11500000000001
+    },
+    "arakeregatejunc": {
+      "avg_duration": 2223.861788502381,
+      "avg_severity": 1.2857142857142858,
+      "avg_impact": 66.55428571428571,
+      "event_frequency": 14.0,
+      "rolling_impact_30d": 68.35000000000001
+    },
+    "kogillucrossjunc": {
+      "avg_duration": 409.15381281428563,
+      "avg_severity": 1.4285714285714286,
+      "avg_impact": 71.15714285714286,
+      "event_frequency": 14.0,
+      "rolling_impact_30d": 70.83857142857143
+    },
+    "batrayanapura_amrutahalli_junction": {
+      "avg_duration": 120.40108536153845,
+      "avg_severity": 1.3846153846153846,
+      "avg_impact": 70.81923076923077,
+      "event_frequency": 13.0,
+      "rolling_impact_30d": 73.29400000000001
+    },
+    "binnymilljunction": {
+      "avg_duration": 3432.501684583333,
+      "avg_severity": 1.0,
+      "avg_impact": 72.395,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 71.395
+    },
+    "29thmainrdbtm_layoutjunc": {
+      "avg_duration": 5072.163562395834,
+      "avg_severity": 0.75,
+      "avg_impact": 65.27,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 75.0
+    },
+    "k_r_circle": {
+      "avg_duration": 984.993036495,
+      "avg_severity": 0.6,
+      "avg_impact": 59.952999999999996,
+      "event_frequency": 30.0,
+      "rolling_impact_30d": 64.153125
+    },
+    "gangammagudijunc": {
+      "avg_duration": 70.08885797333333,
+      "avg_severity": 0.0,
+      "avg_impact": 42.760000000000005,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 42.477500000000006
+    },
+    "goruguntepalyajunc": {
+      "avg_duration": 92.65564455789473,
+      "avg_severity": 1.3157894736842106,
+      "avg_impact": 66.8457894736842,
+      "event_frequency": 19.0,
+      "rolling_impact_30d": 69.498
+    },
+    "bilekahallijunc": {
+      "avg_duration": 1218.4406801115385,
+      "avg_severity": 1.6153846153846154,
+      "avg_impact": 77.81846153846153,
+      "event_frequency": 13.0,
+      "rolling_impact_30d": 71.62857142857142
+    },
+    "motherteressacircle": {
+      "avg_duration": 85.54563756499999,
+      "avg_severity": 1.1,
+      "avg_impact": 60.19199999999999,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 61.556666666666665
+    },
+    "mc_circle": {
+      "avg_duration": 135.14503094333332,
+      "avg_severity": 1.0,
+      "avg_impact": 63.894000000000005,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 62.18000000000001
+    },
+    "richmond_circle_jn": {
+      "avg_duration": 2076.179196028333,
+      "avg_severity": 1.5,
+      "avg_impact": 72.935,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 72.4125
+    },
+    "safinaplazajunc": {
+      "avg_duration": 943.8231238431243,
+      "avg_severity": 1.0641724479682855,
+      "avg_impact": 64.96834489593657,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.96834489593657
+    },
+    "silkboardjunc": {
+      "avg_duration": 716.1657719432292,
+      "avg_severity": 1.59375,
+      "avg_impact": 74.4940625,
+      "event_frequency": 32.0,
+      "rolling_impact_30d": 65.10833333333333
+    },
+    "siddapurajunction": {
+      "avg_duration": 149.536902325,
+      "avg_severity": 0.5,
+      "avg_impact": 62.442499999999995,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 60.714999999999996
+    },
+    "isro_junction_airport_rd": {
+      "avg_duration": 1698.756346825,
+      "avg_severity": 1.5,
+      "avg_impact": 76.035,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 88.865
+    },
+    "priyadarshinihotel_jayamahal_rt_nagar": {
+      "avg_duration": 940.7102605433334,
+      "avg_severity": 0.4,
+      "avg_impact": 57.512,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 72.85
+    },
+    "nagavara_orr_junction": {
+      "avg_duration": 2062.175930575269,
+      "avg_severity": 1.5806451612903225,
+      "avg_impact": 71.1174193548387,
+      "event_frequency": 31.0,
+      "rolling_impact_30d": 84.565
+    },
+    "krishnaflourmill": {
+      "avg_duration": 1218.898908925,
+      "avg_severity": 0.7777777777777778,
+      "avg_impact": 63.00222222222222,
+      "event_frequency": 18.0,
+      "rolling_impact_30d": 68.52875
+    },
+    "nandicross_ranicross": {
+      "avg_duration": 231.6271817666667,
+      "avg_severity": 1.0,
+      "avg_impact": 71.71000000000001,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 75.0
+    },
+    "kadirenahallijunction": {
+      "avg_duration": 58.090813973809524,
+      "avg_severity": 1.2857142857142858,
+      "avg_impact": 60.83142857142857,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 55.10799999999999
+    },
+    "indianexpressjunction": {
+      "avg_duration": 1059.2089452144444,
+      "avg_severity": 1.3333333333333333,
+      "avg_impact": 59.854,
+      "event_frequency": 15.0,
+      "rolling_impact_30d": 54.40833333333334
+    },
+    "nagarbhavi": {
+      "avg_duration": 1419.1421910645834,
+      "avg_severity": 0.75,
+      "avg_impact": 65.99000000000001,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 61.09
+    },
+    "bommanahalli": {
+      "avg_duration": 896.2754880793333,
+      "avg_severity": 1.32,
+      "avg_impact": 65.7192,
+      "event_frequency": 25.0,
+      "rolling_impact_30d": 77.13857142857144
+    },
+    "btm16thmain_orr_junc": {
+      "avg_duration": 2045.53853424,
+      "avg_severity": 0.4,
+      "avg_impact": 49.694,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 36.44
+    },
+    "devangahosteljunction": {
+      "avg_duration": 215.77806395,
+      "avg_severity": 0.75,
+      "avg_impact": 60.825,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 52.76666666666667
+    },
+    "hosmatjunction": {
+      "avg_duration": 76.72648739166667,
+      "avg_severity": 0.0,
+      "avg_impact": 39.59,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 39.59
+    },
+    "jp_nagar_15th_cross_junction": {
+      "avg_duration": 1722.4154175944443,
+      "avg_severity": 1.1666666666666667,
+      "avg_impact": 66.135,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 67.84400000000001
+    },
+    "mekhricircle": {
+      "avg_duration": 276.47589285000004,
+      "avg_severity": 1.4126984126984128,
+      "avg_impact": 70.56158730158731,
+      "event_frequency": 63.0,
+      "rolling_impact_30d": 68.90882352941175
+    },
+    "hesaraghattajunction": {
+      "avg_duration": 98.04679048793103,
+      "avg_severity": 1.2758620689655173,
+      "avg_impact": 66.34275862068965,
+      "event_frequency": 29.0,
+      "rolling_impact_30d": 73.01454545454546
+    },
+    "meenakshimalljunc": {
+      "avg_duration": 1574.3929812547617,
+      "avg_severity": 1.4285714285714286,
+      "avg_impact": 75.37,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 76.465
+    },
+    "vetenaryhospitaljunc_shivajinagar": {
+      "avg_duration": 169.8523339611111,
+      "avg_severity": 0.0,
+      "avg_impact": 51.23,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 51.23
+    },
+    "kr_road_14thcross_junc": {
+      "avg_duration": 937.8847956046989,
+      "avg_severity": 1.0630056386369209,
+      "avg_impact": 64.92302525128709,
+      "event_frequency": 0.0,
+      "rolling_impact_30d": 64.92302525128709
+    },
+    "yelhankabypass": {
+      "avg_duration": 189.37147435833333,
+      "avg_severity": 1.2777777777777777,
+      "avg_impact": 65.31,
+      "event_frequency": 18.0,
+      "rolling_impact_30d": 64.86
+    },
+    "cmp_gatejunc": {
+      "avg_duration": 3102.2924769798246,
+      "avg_severity": 1.6842105263157894,
+      "avg_impact": 82.70631578947369,
+      "event_frequency": 19.0,
+      "rolling_impact_30d": 87.13699999999999
+    },
+    "bangalorebodybuildersjunc": {
+      "avg_duration": 1192.2171559722221,
+      "avg_severity": 1.3888888888888888,
+      "avg_impact": 69.86055555555555,
+      "event_frequency": 18.0,
+      "rolling_impact_30d": 62.604285714285716
+    },
+    "anilkumblecircle": {
+      "avg_duration": 111.0787939952381,
+      "avg_severity": 1.1428571428571428,
+      "avg_impact": 63.88428571428572,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 70.09666666666666
+    },
+    "jalahallicross_sm_circle": {
+      "avg_duration": 297.8723543548387,
+      "avg_severity": 1.2258064516129032,
+      "avg_impact": 65.58354838709677,
+      "event_frequency": 31.0,
+      "rolling_impact_30d": 68.063
+    },
+    "rajajinagar19thmainjunc": {
+      "avg_duration": 151.35438626333334,
+      "avg_severity": 1.4,
+      "avg_impact": 73.91799999999999,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 73.91799999999999
+    },
+    "townhalljunction": {
+      "avg_duration": 409.2179582017242,
+      "avg_severity": 1.4482758620689655,
+      "avg_impact": 71.37137931034482,
+      "event_frequency": 29.0,
+      "rolling_impact_30d": 74.84571428571428
+    },
+    "ayyappatemplejunc": {
+      "avg_duration": 861.377298570486,
+      "avg_severity": 1.1458333333333333,
+      "avg_impact": 54.129375,
+      "event_frequency": 48.0,
+      "rolling_impact_30d": 65.01285714285714
+    },
+    "yeshwanthpuracircle": {
+      "avg_duration": 284.7508927463964,
+      "avg_severity": 1.1891891891891893,
+      "avg_impact": 60.192702702702704,
+      "event_frequency": 37.0,
+      "rolling_impact_30d": 63.487647058823526
+    },
+    "gokuldasimagesjunc": {
+      "avg_duration": 105.40465987654322,
+      "avg_severity": 1.4814814814814814,
+      "avg_impact": 72.06407407407407,
+      "event_frequency": 27.0,
+      "rolling_impact_30d": 66.41181818181818
+    },
+    "leprosyhospitaljunc": {
+      "avg_duration": 602.3113895666667,
+      "avg_severity": 1.4,
+      "avg_impact": 69.916,
+      "event_frequency": 20.0,
+      "rolling_impact_30d": 74.56166666666667
+    },
+    "naganathapurajunction": {
+      "avg_duration": 153.68647473636364,
+      "avg_severity": 1.4545454545454546,
+      "avg_impact": 69.83,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 72.594
+    },
+    "bagalurcrossjunc": {
+      "avg_duration": 504.9571120391026,
+      "avg_severity": 1.3846153846153846,
+      "avg_impact": 68.80153846153846,
+      "event_frequency": 26.0,
+      "rolling_impact_30d": 64.41749999999999
+    },
+    "khodayscircle_dv_urscircle": {
+      "avg_duration": 101.78969290227273,
+      "avg_severity": 0.36363636363636365,
+      "avg_impact": 52.95045454545455,
+      "event_frequency": 22.0,
+      "rolling_impact_30d": 48.97571428571429
+    },
+    "jayadevahospitaljunc": {
+      "avg_duration": 130.07499863333334,
+      "avg_severity": 1.2857142857142858,
+      "avg_impact": 66.97428571428571,
+      "event_frequency": 7.0,
+      "rolling_impact_30d": 62.99
+    },
+    "hennurroad_orr_junc": {
+      "avg_duration": 113.25439286354167,
+      "avg_severity": 1.25,
+      "avg_impact": 66.031875,
+      "event_frequency": 16.0,
+      "rolling_impact_30d": 59.432
+    },
+    "konanakuntejunction_kanakapurarrd": {
+      "avg_duration": 126.11562709666666,
+      "avg_severity": 0.2,
+      "avg_impact": 50.763999999999996,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 50.5375
+    },
+    "arbindo_circle": {
+      "avg_duration": 525.9933159777778,
+      "avg_severity": 0.6666666666666666,
+      "avg_impact": 65.51,
+      "event_frequency": 9.0,
+      "rolling_impact_30d": 60.915000000000006
+    },
+    "trinitycircle": {
+      "avg_duration": 2095.56336066,
+      "avg_severity": 1.4,
+      "avg_impact": 69.94500000000001,
+      "event_frequency": 10.0,
+      "rolling_impact_30d": 70.63428571428571
+    },
+    "k_h_road_siddaiahrdjunc_bmtc_bigbazaar": {
+      "avg_duration": 241.60779832333333,
+      "avg_severity": 0.8,
+      "avg_impact": 67.09400000000001,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 58.8675
+    },
+    "lalbaghmaingatejunc": {
+      "avg_duration": 110.67779068666667,
+      "avg_severity": 0.6,
+      "avg_impact": 58.838,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 35.62
+    },
+    "queensstatuecircle": {
+      "avg_duration": 2878.481769420833,
+      "avg_severity": 1.75,
+      "avg_impact": 76.645,
+      "event_frequency": 8.0,
+      "rolling_impact_30d": 74.612
+    },
+    "mysorerd_ringrdjunc_nayandanahallii": {
+      "avg_duration": 902.8751987111111,
+      "avg_severity": 1.5555555555555556,
+      "avg_impact": 75.4511111111111,
+      "event_frequency": 18.0,
+      "rolling_impact_30d": 74.38499999999999
+    },
+    "unknown": {
+      "avg_duration": 909.389730003397,
+      "avg_severity": 1.0330271988696573,
+      "avg_impact": 64.75512716354646,
+      "event_frequency": 5662.0,
+      "rolling_impact_30d": 64.5029519918284
+    }
+  },
+  "location_cluster": {
+    "9": {
+      "avg_duration": 7.288211022222222,
+      "avg_severity": 0.0,
+      "avg_impact": 30.909999999999997,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 30.909999999999997
+    },
+    "10": {
+      "avg_duration": 5091.240580616667,
+      "avg_severity": 1.5,
+      "avg_impact": 73.905,
+      "event_frequency": 2.0,
+      "rolling_impact_30d": 73.905
+    },
+    "8": {
+      "avg_duration": 151.96205185833333,
+      "avg_severity": 0.8333333333333334,
+      "avg_impact": 70.29166666666667,
+      "event_frequency": 6.0,
+      "rolling_impact_30d": 58.394999999999996
+    },
+    "6": {
+      "avg_duration": 36.619846108333334,
+      "avg_severity": 0.0,
+      "avg_impact": 42.0775,
+      "event_frequency": 4.0,
+      "rolling_impact_30d": 43.114999999999995
+    },
+    "7": {
+      "avg_duration": 55.193544444444434,
+      "avg_severity": 0.3333333333333333,
+      "avg_impact": 51.9,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 46.6
+    },
+    "4": {
+      "avg_duration": 1078.003148521212,
+      "avg_severity": 0.45454545454545453,
+      "avg_impact": 55.68,
+      "event_frequency": 11.0,
+      "rolling_impact_30d": 58.82
+    },
+    "2": {
+      "avg_duration": 1862.60744046,
+      "avg_severity": 0.8,
+      "avg_impact": 64.462,
+      "event_frequency": 5.0,
+      "rolling_impact_30d": 58.995
+    },
+    "5": {
+      "avg_duration": 62.49126544999999,
+      "avg_severity": 0.6666666666666666,
+      "avg_impact": 51.14333333333334,
+      "event_frequency": 3.0,
+      "rolling_impact_30d": 40.39
+    },
+    "1": {
+      "avg_duration": 520.7659590976191,
+      "avg_severity": 0.5714285714285714,
+      "avg_impact": 59.00190476190476,
+      "event_frequency": 21.0,
+      "rolling_impact_30d": 67.77166666666666
+    },
+    "3": {
+      "avg_duration": 46.86770974513889,
+      "avg_severity": 0.041666666666666664,
+      "avg_impact": 40.025,
+      "event_frequency": 24.0,
+      "rolling_impact_30d": 34.93333333333334
+    },
+    "-1": {
+      "avg_duration": 2032.3753758484847,
+      "avg_severity": 0.45454545454545453,
+      "avg_impact": 54.98500000000001,
+      "event_frequency": 22.0,
+      "rolling_impact_30d": 48.235
+    },
+    "0": {
+      "avg_duration": 905.9501945216872,
+      "avg_severity": 1.0737247114310537,
+      "avg_impact": 65.11970336353481,
+      "event_frequency": 8057.0,
+      "rolling_impact_30d": 64.53808324768757
+    }
+  }
+}
