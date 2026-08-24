@@ -1,20 +1,11 @@
 """
 deployment_service.py
 =======================
-ReRoutz AI — Stage 2d: FastAPI router for manpower/barricade predictions.
+EventFlow AI — Stage 2d: FastAPI router for manpower/barricade predictions.
 
 Mount this into your existing app.py (see app_integrated.py for a full
 example) so the diversion engine and the deployment model share one process
 and one set of model artifacts loaded once at startup.
-
-Endpoint:
-    POST /predict-deployment
-        body: DeploymentRequest (see below)
-        returns: recommended_personnel, recommended_barricades,
-                 deployment_tier, plus the derived severity/affected_radius
-                 used internally and a "label_basis" note so the frontend
-                 can be honest with the user that these are model estimates,
-                 not measured facts.
 """
 
 from __future__ import annotations
@@ -35,8 +26,10 @@ from inference_features import DeploymentFeatureBuilder
 
 router = APIRouter()
 
-ARTIFACTS_DIR = Path("model_artifacts")
-FEATURE_METADATA_PATH = Path("feature_metadata.json")
+# ─── Robust Absolute Paths ───
+BASE_DIR = Path(__file__).resolve().parent
+ARTIFACTS_DIR = BASE_DIR / "model_artifacts"
+FEATURE_METADATA_PATH = BASE_DIR / "feature_metadata.json"
 
 _builder: Optional[DeploymentFeatureBuilder] = None
 _personnel_model = None
@@ -109,6 +102,7 @@ class SimilarityRequest(BaseModel):
     lat: float
     lon: float
 
+
 class SimilarIncidentMatch(BaseModel):
     incident_id: str
     date: str
@@ -119,6 +113,7 @@ class SimilarIncidentMatch(BaseModel):
     recommended_personnel: int
     recommended_barricades: int
     deployment_tier: str
+
 
 class SimilarityResponse(BaseModel):
     matches: List[SimilarIncidentMatch]
@@ -135,6 +130,7 @@ class PlanEventRequest(BaseModel):
     expected_duration_hours: float
     description: str = ""
 
+
 class PlanEventResponse(BaseModel):
     pre_event_risk_index: float
     recommended_personnel: int
@@ -144,65 +140,104 @@ class PlanEventResponse(BaseModel):
 
 
 def load_models() -> None:
-    """Call once at app startup."""
+    """Call once at app startup to load trained models and feature metadata."""
     global _builder, _personnel_model, _barricade_model, _tier_model, _tier_encoder
     global _historical_rows, _historical_tfidf
+
     print(f"Loading deployment models from {ARTIFACTS_DIR} ...")
-    _builder = DeploymentFeatureBuilder(ARTIFACTS_DIR, FEATURE_METADATA_PATH)
-    _personnel_model = joblib.load(ARTIFACTS_DIR / "personnel_model.joblib")
-    _barricade_model = joblib.load(ARTIFACTS_DIR / "barricade_model.joblib")
-    _tier_model = joblib.load(ARTIFACTS_DIR / "tier_model.joblib")
-    _tier_encoder = joblib.load(ARTIFACTS_DIR / "tier_label_encoder.joblib")
-    print("Deployment models loaded.")
+    try:
+        _builder = DeploymentFeatureBuilder(ARTIFACTS_DIR, FEATURE_METADATA_PATH)
+        _personnel_model = joblib.load(ARTIFACTS_DIR / "personnel_model.joblib")
+        _barricade_model = joblib.load(ARTIFACTS_DIR / "barricade_model.joblib")
+        _tier_model = joblib.load(ARTIFACTS_DIR / "tier_model.joblib")
+        _tier_encoder = joblib.load(ARTIFACTS_DIR / "tier_label_encoder.joblib")
+        print("✅ RandomForest Deployment models loaded successfully.")
+    except Exception as e:
+        print(f"❌ Error loading ML model artifacts: {e}")
+        return
 
     print("Precomputing TF-IDF vectors for historical incidents (Similarity Search)...")
     try:
-        # Try processed_data.csv first (available when the pipeline ran in this
-        # container session), fall back to deployment_dataset.csv which is
-        # always available via the model_artifacts volume mount.
-        csv_path = Path("processed_data.csv")
+        csv_path = BASE_DIR / "processed_data.csv"
         if not csv_path.is_file():
             csv_path = ARTIFACTS_DIR / "deployment_dataset.csv"
-        df = pd.read_csv(csv_path)
-        if "latitude" in df.columns and "lat" not in df.columns:
-            df["lat"] = df["latitude"]
-        if "longitude" in df.columns and "lon" not in df.columns:
-            df["lon"] = df["longitude"]
-            
-        df["description"] = df["description"].fillna("")
-        df["event_cause"] = df["event_cause"].fillna("")
-        
-        combined_texts = (df["description"].astype(str) + " " + df["event_cause"].astype(str)).str.lower().tolist()
-        _historical_tfidf = _builder.tfidf_vectorizer.transform(combined_texts)
-        _historical_rows = df.to_dict("records")
-        print(f"Cached {_historical_tfidf.shape[0]} historical incidents for similarity search (from {csv_path}).")
+        if not csv_path.is_file():
+            csv_path = BASE_DIR / "Data" / "Dataset.csv"
+        if not csv_path.is_file():
+            csv_path = BASE_DIR.parent / "Data" / "Dataset.csv"
+
+        if csv_path.is_file():
+            df = pd.read_csv(csv_path)
+            if "latitude" in df.columns and "lat" not in df.columns:
+                df["lat"] = df["latitude"]
+            if "longitude" in df.columns and "lon" not in df.columns:
+                df["lon"] = df["longitude"]
+
+            df["description"] = df.get("description", pd.Series([""] * len(df))).fillna("")
+            df["event_cause"] = df.get("event_cause", pd.Series([""] * len(df))).fillna("")
+
+            combined_texts = (df["description"].astype(str) + " " + df["event_cause"].astype(str)).str.lower().tolist()
+            _historical_tfidf = _builder.tfidf_vectorizer.transform(combined_texts)
+            _historical_rows = df.to_dict("records")
+            print(f"Cached {_historical_tfidf.shape[0]} historical incidents for similarity search (from {csv_path}).")
+        else:
+            print("⚠️ Warning: Historical dataset not found for similarity search caching.")
     except Exception as e:
-        print(f"Warning: Failed to precompute similarity vectors: {e}")
+        print(f"⚠️ Warning: Failed to precompute similarity vectors: {e}")
 
 
 @router.post("/predict-deployment", response_model=DeploymentResponse)
 def predict_deployment(req: DeploymentRequest) -> DeploymentResponse:
-    if _builder is None:
+    if _builder is None or _personnel_model is None:
         raise HTTPException(status_code=503, detail="Deployment models not loaded yet. Call load_models() at startup.")
 
     t0 = time.monotonic()
     try:
         frame, extras = _builder.build(req.model_dump())
+        
+        # Base ML predictions from trained RandomForest models
         personnel = float(_personnel_model.predict(frame)[0])
         barricades = float(_barricade_model.predict(frame)[0])
         tier_idx = _tier_model.predict(frame)[0]
         tier = str(_tier_encoder.inverse_transform([tier_idx])[0])
+
+        # Feature sensitivity scaling for priority and closures
+        priority = (req.priority or "medium").lower()
+        if priority in ("critical", "p0", "severe", "very_high"):
+            personnel = max(personnel * 1.8, 14.0)
+            barricades = max(barricades * 1.8, 12.0)
+            tier = "Critical"
+        elif priority in ("high", "p1"):
+            personnel = max(personnel * 1.4, 9.0)
+            barricades = max(barricades * 1.4, 7.0)
+            if tier in ("Low", "Medium"):
+                tier = "High"
+        elif priority in ("low", "p3", "minor"):
+            personnel = min(personnel * 0.7, 4.0)
+            barricades = min(barricades * 0.7, 3.0)
+            tier = "Low"
+
+        if req.requires_road_closure:
+            personnel += 6.0
+            barricades += 8.0
+            if tier == "Low":
+                tier = "Medium"
+            elif tier == "Medium":
+                tier = "High"
+            elif tier == "High":
+                tier = "Critical"
+
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"Prediction failed: {exc}") from exc
+        
     elapsed_ms = round((time.monotonic() - t0) * 1000)
 
     recommended_personnel = max(2, round(personnel))
     recommended_barricades = max(2, round(barricades))
     explanation = build_explanation(req, extras, recommended_personnel, recommended_barricades)
 
-    # ── Immutable audit record ──────────────────────────────────────────
+    # ── Immutable audit record ──
     audit_logger.log("deployment_prediction", {
-        # ── Inputs ──
         "incident_id": req.incident_id,
         "lat": req.lat,
         "lon": req.lon,
@@ -216,7 +251,6 @@ def predict_deployment(req: DeploymentRequest) -> DeploymentResponse:
         "zone": req.zone,
         "description": req.description,
         "start_datetime": req.start_datetime,
-        # ── Model outputs ──
         "recommended_personnel": recommended_personnel,
         "recommended_barricades": recommended_barricades,
         "deployment_tier": tier,
@@ -224,11 +258,9 @@ def predict_deployment(req: DeploymentRequest) -> DeploymentResponse:
         "affected_radius_km": extras["affected_radius"],
         "is_major_corridor": bool(extras["is_major_corridor"]),
         "location_cluster": extras["location_cluster"],
-        # ── Justification ──
         "explanation": explanation,
         "response_time_ms": elapsed_ms,
     })
-    # ───────────────────────────────────────────────────────────────────
 
     return DeploymentResponse(
         recommended_personnel=recommended_personnel,
@@ -247,21 +279,32 @@ def predict_deployment_cluster(req: ClusterDeploymentRequest) -> ClusterDeployme
     if _builder is None:
         raise HTTPException(status_code=503, detail="Deployment models not loaded yet. Call load_models() at startup.")
 
-    # Process the single target using the existing logic
     single_point_resp = predict_deployment(req.target)
 
-    cluster_frames = []
+    cluster_responses = []
     included_ids = []
 
     try:
-        import pandas as pd
+        tier_hierarchy = {"Low": 1, "Medium": 2, "High": 3, "Critical": 4}
+        total_personnel = 0
+        total_barricades = 0
+        max_tier_val = 1
+        max_tier_str = "Low"
+
         for inc in req.active_cluster:
-            frame, _ = _builder.build(inc.model_dump())
-            cluster_frames.append(frame)
+            resp = predict_deployment(inc)
+            cluster_responses.append(resp)
             included_ids.append(inc.incident_id)
 
-        if not cluster_frames:
-            # Fallback if cluster is empty
+            total_personnel += resp.recommended_personnel
+            total_barricades += resp.recommended_barricades
+
+            t_val = tier_hierarchy.get(resp.deployment_tier, 1)
+            if t_val > max_tier_val:
+                max_tier_val = t_val
+                max_tier_str = resp.deployment_tier
+
+        if not cluster_responses:
             cluster_area_resp = ClusterAreaResponse(
                 personnel_total=single_point_resp.recommended_personnel,
                 barricades_total=single_point_resp.recommended_barricades,
@@ -272,22 +315,10 @@ def predict_deployment_cluster(req: ClusterDeploymentRequest) -> ClusterDeployme
                 included_incident_ids=[req.target.incident_id]
             )
         else:
-            batch_frame = pd.concat(cluster_frames, ignore_index=True)
-
-            personnel_preds = _personnel_model.predict(batch_frame)
-            barricade_preds = _barricade_model.predict(batch_frame)
-            tier_idxs = _tier_model.predict(batch_frame)
-
-            total_personnel = sum(max(2, round(float(p))) for p in personnel_preds)
-            total_barricades = sum(max(2, round(float(b))) for b in barricade_preds)
-
-            max_tier_idx = max(tier_idxs)
-            max_tier = str(_tier_encoder.inverse_transform([max_tier_idx])[0])
-
             cluster_area_resp = ClusterAreaResponse(
                 personnel_total=total_personnel,
                 barricades_total=total_barricades,
-                tier_max=max_tier,
+                tier_max=max_tier_str,
                 incident_count=len(req.active_cluster),
                 radius_km=req.radius_km,
                 label_basis=single_point_resp.label_basis,
@@ -314,7 +345,7 @@ def build_explanation(req: DeploymentRequest, extras: dict, personnel: int, barr
         reasons.append("A road closure increases both traffic-control staffing and barricade requirements.")
     if extras["is_major_corridor"]:
         reasons.append("The incident is on a major corridor, increasing control points and diversion complexity.")
-    if req.priority.lower() == "high":
+    if req.priority.lower() in ("high", "critical", "p0", "p1", "severe"):
         reasons.append("High priority raises the inferred severity and the recommended response capacity.")
 
     text = f"{req.event_cause} {req.description}".lower()
@@ -341,27 +372,27 @@ def build_explanation(req: DeploymentRequest, extras: dict, personnel: int, barr
 def similar_incidents(req: SimilarityRequest) -> SimilarityResponse:
     if _builder is None or _historical_tfidf is None or not _historical_rows:
         raise HTTPException(status_code=503, detail="Similarity engine not initialized.")
-        
+
     combined_text = f"{req.description} {req.event_cause}".lower()
     query_vec = _builder.tfidf_vectorizer.transform([combined_text])
-    
+
     sim_scores = cosine_similarity(query_vec, _historical_tfidf).flatten()
-    
+
     req_cluster = _builder._assign_cluster(req.lat, req.lon)
-    
+
     for i, row in enumerate(_historical_rows):
         if str(row.get("event_type", "")).lower() == req.event_type.lower():
             sim_scores[i] += 0.05
         if row.get("location_cluster") == req_cluster and req_cluster != -1:
             sim_scores[i] += 0.05
-            
+
     top_indices = sim_scores.argsort()[-5:][::-1]
-    
+
     matches = []
     for idx in top_indices:
         score = float(sim_scores[idx])
         row = _historical_rows[idx]
-        
+
         sim_req_dict = {
             "lat": float(row.get("lat", 0.0)),
             "lon": float(row.get("lon", 0.0)),
@@ -377,7 +408,7 @@ def similar_incidents(req: SimilarityRequest) -> SimilarityResponse:
             "start_datetime": str(row.get("start_datetime", "")),
             "expected_duration_minutes": float(row.get("expected_duration_minutes", 60.0))
         }
-        
+
         try:
             frame, _ = _builder.build(sim_req_dict)
             personnel = max(2, round(float(_personnel_model.predict(frame)[0])))
@@ -388,11 +419,11 @@ def similar_incidents(req: SimilarityRequest) -> SimilarityResponse:
             personnel = 2
             barricades = 2
             tier = "Low"
-            
+
         desc = str(row.get("description", ""))
         if len(desc) > 60:
             desc = desc[:57] + "..."
-            
+
         corridor = str(row.get("corridor", ""))
         junction = str(row.get("junction", ""))
         if junction and junction != "unknown":
@@ -401,9 +432,9 @@ def similar_incidents(req: SimilarityRequest) -> SimilarityResponse:
             loc_label = corridor
         else:
             loc_label = "Unknown Location"
-            
+
         date_str = str(row.get("start_datetime", ""))[:10] if str(row.get("start_datetime", "")) else "Unknown"
-        
+
         matches.append(SimilarIncidentMatch(
             incident_id=str(row.get("id", "unknown")),
             date=date_str,
@@ -415,14 +446,14 @@ def similar_incidents(req: SimilarityRequest) -> SimilarityResponse:
             recommended_barricades=barricades,
             deployment_tier=tier
         ))
-        
+
     return SimilarityResponse(matches=matches)
 
 
 @router.post("/plan-event", response_model=PlanEventResponse)
 def plan_event(req: PlanEventRequest) -> PlanEventResponse:
-    if _builder is None:
-        raise HTTPException(status_code=503, detail="Models not loaded")
+    if _builder is None or _personnel_model is None:
+        raise HTTPException(status_code=503, detail="Models not loaded yet.")
 
     t0 = time.monotonic()
 
@@ -449,34 +480,17 @@ def plan_event(req: PlanEventRequest) -> PlanEventResponse:
     tier_idx = _tier_model.predict(frame)[0]
     tier = str(_tier_encoder.inverse_transform([tier_idx])[0])
 
-    """
-    pre_event_risk_index Formula:
-    Base Risk is driven by the ML predicted deployment tier.
-    - Low: 20
-    - Medium: 50
-    - High: 75
-    - Critical: 90
-
-    Location penalties (from historical entity lookup):
-    - Frequency Penalty: Up to 10 points (safe_corridor_event_frequency normalized)
-    - Severity Penalty: Up to 10 points (safe_corridor_avg_severity * 5)
-
-    Temporal constraints (derived from start_datetime):
-    - Peak Hour Penalty: +10 points
-    - Weekend Penalty: +5 points
-    """
     tier_scores = {"Low": 20, "Medium": 50, "High": 75, "Critical": 90}
     base_risk = tier_scores.get(tier, 20)
 
-    peak_flag = frame["peak_hour_flag"].iloc[0]
-    is_weekend = frame["is_weekend"].iloc[0]
-    event_freq = frame["safe_corridor_event_frequency"].iloc[0]
-    avg_sev = frame["safe_corridor_avg_severity"].iloc[0]
+    peak_flag = frame.get("peak_hour_flag", pd.Series([0])).iloc[0]
+    is_weekend = frame.get("is_weekend", pd.Series([0])).iloc[0]
+    event_freq = frame.get("safe_corridor_event_frequency", pd.Series([0])).iloc[0]
+    avg_sev = frame.get("safe_corridor_avg_severity", pd.Series([0])).iloc[0]
 
-    freq_penalty = min(10.0, (event_freq / 100.0) * 10.0)
-    sev_penalty = min(10.0, avg_sev * 5.0)
-
-    temporal_penalty = 10 if peak_flag else (5 if is_weekend else 0)
+    freq_penalty = min(10.0, (float(event_freq) / 100.0) * 10.0)
+    sev_penalty = min(10.0, float(avg_sev) * 5.0)
+    temporal_penalty = 10.0 if peak_flag else (5.0 if is_weekend else 0.0)
 
     risk_index = min(100.0, base_risk + freq_penalty + sev_penalty + temporal_penalty)
 
@@ -487,9 +501,7 @@ def plan_event(req: PlanEventRequest) -> PlanEventResponse:
 
     elapsed_ms = round((time.monotonic() - t0) * 1000)
 
-    # ── Immutable audit record ──────────────────────────────────────────
     audit_logger.log("plan_event_risk", {
-        # ── Inputs ──
         "lat": req.lat,
         "lon": req.lon,
         "event_type": req.event_type,
@@ -499,13 +511,11 @@ def plan_event(req: PlanEventRequest) -> PlanEventResponse:
         "planned_date_time": req.planned_date_time,
         "expected_duration_hours": req.expected_duration_hours,
         "description": req.description,
-        # ── Model outputs ──
         "pre_event_risk_index": round(risk_index, 1),
         "recommended_personnel": personnel,
         "recommended_barricades": barricades,
         "deployment_tier": tier,
         "deployment_lead_time_hours": lead_time,
-        # ── Risk breakdown ──
         "base_risk": base_risk,
         "freq_penalty": round(freq_penalty, 2),
         "sev_penalty": round(sev_penalty, 2),
@@ -514,7 +524,6 @@ def plan_event(req: PlanEventRequest) -> PlanEventResponse:
         "is_weekend": bool(is_weekend),
         "response_time_ms": elapsed_ms,
     })
-    # ───────────────────────────────────────────────────────────────────
 
     return PlanEventResponse(
         pre_event_risk_index=round(risk_index, 1),

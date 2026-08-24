@@ -1,7 +1,10 @@
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000").replace(/\/$/, "");
+// Hardcode the FastAPI backend URL directly:
+const API_BASE_URL = "http://127.0.0.1:8000";
 
 async function request(path, options = {}) {
   const url = `${API_BASE_URL}${path}`;
+  console.log(`[API Request] Fetching: ${url}`);
+
   const response = await fetch(url, {
     ...options,
     headers: {
@@ -10,23 +13,42 @@ async function request(path, options = {}) {
     },
   });
 
+  const text = await response.text();
+
+  // If Vite or HTML server responded instead of FastAPI JSON:
+  if (text.trim().startsWith("<")) {
+    throw new Error(`Server returned HTML instead of JSON from ${url}. Check if FastAPI is running on ${API_BASE_URL}`);
+  }
+
   if (!response.ok) {
     let errorDetail = `Request failed with status ${response.status}`;
     try {
-      const errJson = await response.json();
+      const errJson = JSON.parse(text);
       errorDetail = errJson.detail || errJson.message || errorDetail;
     } catch {
-      const rawText = await response.text();
-      if (rawText) errorDetail = rawText;
+      if (text) errorDetail = text;
     }
     throw new Error(errorDetail);
   }
 
-  return response.json();
+  return JSON.parse(text);
 }
 
 export function getDataset() {
   return request("/get-dataset");
+}
+
+export function createIncident(payload) {
+  return request("/create-incident", {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
+}
+
+export function resolveIncident(incidentId) {
+  return request(`/resolve-incident/${encodeURIComponent(incidentId)}`, {
+    method: "POST",
+  });
 }
 
 export function calculateClusterDiversion(payload) {
@@ -97,17 +119,3 @@ export function getAuditLogs({ eventType, limit = 50, offset = 0 } = {}) {
 export function getAuditStats() {
   return request("/audit-logs/stats");
 }
-
-export const api = {
-  getDataset,
-  calculateClusterDiversion,
-  calculateRouteDiversion,
-  predictDeployment,
-  predictDeploymentCluster,
-  getAnalyticsSummary,
-  findSimilarIncidents,
-  planEvent,
-  optimizePatrolRoute,
-  getAuditLogs,
-  getAuditStats,
-};

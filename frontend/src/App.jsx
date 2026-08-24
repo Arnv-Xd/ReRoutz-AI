@@ -3,6 +3,8 @@ import {
   calculateClusterDiversion,
   calculateRouteDiversion,
   getDataset,
+  createIncident,
+  resolveIncident,
   predictDeploymentCluster,
   findSimilarIncidents,
   planEvent,
@@ -16,7 +18,6 @@ import RadiusSlider from "./components/RadiusSlider.jsx";
 import RoutePlannerPanel from "./components/RoutePlannerPanel.jsx";
 import TimelineScrubber from "./components/TimelineScrubber.jsx";
 import AnalyticsPanel from "./components/AnalyticsPanel.jsx";
-import AuditDashboard from "./components/AuditDashboard.jsx";
 
 const defaultForm = {
   lat: "",
@@ -44,39 +45,27 @@ const defaultPlanEventForm = {
   description: "",
 };
 
-function normalizeDataset(data) {
+function normalizeLiveDataset(data) {
+  const now = Date.now();
   let minTime = Infinity;
   let maxTime = -Infinity;
 
-  const incidents = data
+  const incidents = (data || [])
     .map((incident, index) => {
-      const rawStart =
-        incident.start_datetime ||
-        incident.start_time ||
-        incident.created_at ||
-        incident.datetime;
+      const rawStart = incident.start_datetime || incident.created_date || incident.datetime;
+      const parsedStart = rawStart ? new Date(rawStart).getTime() : now;
+      const validStart = Number.isNaN(parsedStart) ? now : parsedStart;
 
-      const parsedStart = rawStart ? new Date(rawStart).getTime() : NaN;
-      if (Number.isNaN(parsedStart)) return null;
+      const rawResolved = incident.resolved_datetime || incident.end_datetime;
+      const parsedResolved = rawResolved ? new Date(rawResolved).getTime() : NaN;
 
-      // Extract explicit end time or calculate from duration_minutes
-      const rawEnd =
-        incident.end_datetime ||
-        incident.resolved_datetime ||
-        incident.closed_datetime;
+      const isResolved =
+        String(incident.status).toLowerCase() === "resolved" ||
+        String(incident.status).toLowerCase() === "closed" ||
+        Number.isFinite(parsedResolved);
 
-      let parsedEnd = rawEnd ? new Date(rawEnd).getTime() : NaN;
-
-      if (Number.isNaN(parsedEnd)) {
-        const durationMinutes =
-          Number(incident.duration_minutes) ||
-          Number(incident.expected_duration_minutes) ||
-          180; // 3-hour realistic active window
-        parsedEnd = parsedStart + durationMinutes * 60 * 1000;
-      }
-
-      minTime = Math.min(minTime, parsedStart);
-      maxTime = Math.max(maxTime, parsedEnd);
+      minTime = Math.min(minTime, validStart);
+      maxTime = Math.max(maxTime, Math.max(parsedResolved || validStart, now));
 
       const lat = Number(incident.latitude ?? incident.lat);
       const lon = Number(incident.longitude ?? incident.lon);
@@ -86,17 +75,21 @@ function normalizeDataset(data) {
         ...incident,
         latitude: lat,
         longitude: lon,
-        parsedStart,
-        parsedEnd,
-        stableKey: `${String(incident.id || incident.event_id || "inc")}-${index}`,
+        parsedStart: validStart,
+        parsedResolved: Number.isFinite(parsedResolved) ? parsedResolved : null,
+        isResolved,
+        stableKey: `${String(incident.id || "live")}-${index}`,
       };
     })
     .filter(Boolean);
 
+  const safeMin = Number.isFinite(minTime) && minTime !== Infinity ? minTime : now - 3600000 * 24;
+  const safeMax = Number.isFinite(maxTime) && maxTime !== -Infinity ? maxTime : now;
+
   return {
     incidents,
-    minTime: Number.isFinite(minTime) ? minTime : Date.now() - 86400000 * 30,
-    maxTime: Number.isFinite(maxTime) ? maxTime : Date.now(),
+    minTime: safeMin,
+    maxTime: safeMax,
   };
 }
 
@@ -121,19 +114,15 @@ function getPaddedBoundingBox(a, b, paddingRatio = 0.3, minPaddingKm = 0.5) {
 
   const latSpan = maxLat - minLat;
   const lonSpan = maxLon - minLon;
-
   const avgLat = (minLat + maxLat) / 2;
   const kmPerDegLat = 111.0;
   const kmPerDegLon = 111.0 * Math.cos((avgLat * Math.PI) / 180);
 
-  const latPadding = Math.max(latSpan * paddingRatio, minPaddingKm / kmPerDegLat);
-  const lonPadding = Math.max(lonSpan * paddingRatio, minPaddingKm / kmPerDegLon);
-
   return {
-    minLat: minLat - latPadding,
-    maxLat: maxLat + latPadding,
-    minLon: minLon - lonPadding,
-    maxLon: maxLon + lonPadding,
+    minLat: minLat - Math.max(latSpan * paddingRatio, minPaddingKm / kmPerDegLat),
+    maxLat: maxLat + Math.max(latSpan * paddingRatio, minPaddingKm / kmPerDegLat),
+    minLon: minLon - Math.max(lonSpan * paddingRatio, minPaddingKm / kmPerDegLon),
+    maxLon: maxLon + Math.max(lonSpan * paddingRatio, minPaddingKm / kmPerDegLon),
   };
 }
 
@@ -160,16 +149,14 @@ function readBool(incident, keys) {
 function deploymentPayloadFromIncident(incident) {
   const lat = Number(incident.latitude ?? incident.lat);
   const lon = Number(incident.longitude ?? incident.lon);
-  const eventCause = readString(incident, ["event_cause", "cause", "eventcause"], "unknown");
+  const eventCause = readString(incident, ["event_cause", "cause", "eventcause"], "traffic_jam");
   const description = readString(incident, ["description", "event_description", "details", "remarks"], eventCause);
 
   return {
     incident_id: String(incident.id || incident.stableKey || "unknown"),
     lat,
     lon,
-    event_type: readString(incident, ["event_type", "type"], "unplanned").toLowerCase().includes("planned")
-      ? "planned"
-      : "unplanned",
+    event_type: readString(incident, ["event_type", "type"], "unplanned").toLowerCase().includes("planned") ? "planned" : "unplanned",
     event_cause: eventCause,
     priority: readString(incident, ["priority", "event_priority", "severity"], "medium").toLowerCase(),
     veh_type: readString(incident, ["veh_type", "vehicle_type", "vehicle", "involved_vehicle"], "unknown"),
@@ -209,11 +196,11 @@ function normalizeDiversionResult(result) {
 
 export default function App() {
   const [allIncidents, setAllIncidents] = useState([]);
-  const [minTime, setMinTime] = useState(NaN);
-  const [maxTime, setMaxTime] = useState(NaN);
-  const [selectedTime, setSelectedTime] = useState(NaN);
+  const [minTime, setMinTime] = useState(Date.now() - 3600000 * 24);
+  const [maxTime, setMaxTime] = useState(Date.now());
+  const [selectedTime, setSelectedTime] = useState(Date.now());
   const [radiusKm, setRadiusKm] = useState(1.5);
-  const [status, setStatus] = useState("Loading incident records...");
+  const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [selectedName, setSelectedName] = useState("");
   const [selectedTarget, setSelectedTarget] = useState(null);
@@ -223,7 +210,6 @@ export default function App() {
   const [similarEventsResult, setSimilarEventsResult] = useState(null);
   const [formOpen, setFormOpen] = useState(false);
   const [form, setForm] = useState(defaultForm);
-  const [temporaryIncident, setTemporaryIncident] = useState(null);
   const [submittingForm, setSubmittingForm] = useState(false);
   const [selectedPathIndex, setSelectedPathIndex] = useState(null);
 
@@ -245,32 +231,51 @@ export default function App() {
 
   const [currentView, setCurrentView] = useState("map");
 
+  async function fetchDataset() {
+    try {
+      const result = await getDataset();
+      if (result.status !== "success") throw new Error(result.message || "Could not load dataset.");
+      const normalized = normalizeLiveDataset(result.data || []);
+      setAllIncidents(normalized.incidents);
+      setMinTime(normalized.minTime);
+      setMaxTime(normalized.maxTime);
+      setSelectedTime(normalized.maxTime);
+      setStatus("");
+      setError("");
+    } catch (err) {
+      setError(`Backend offline or dataset error: ${err.message}`);
+      setStatus("");
+    }
+  }
+
   useEffect(() => {
-    getDataset()
-      .then((result) => {
-        if (result.status !== "success") throw new Error(result.message || "Could not load dataset.");
-        const normalized = normalizeDataset(result.data);
-        setAllIncidents(normalized.incidents);
-        setMinTime(normalized.minTime);
-        setMaxTime(normalized.maxTime);
-        // Default timeline position to max time
-        setSelectedTime(normalized.maxTime);
-        setStatus(`Loaded ${normalized.incidents.length} total incident records.`);
-      })
-      .catch((err) => {
-        setError(`Backend is offline or dataset missing: ${err.message}`);
-        setStatus("");
-      });
+    fetchDataset();
+    const interval = setInterval(fetchDataset, 15000);
+    return () => clearInterval(interval);
   }, []);
 
-  // Filter for ACTIVE incidents only (started before/at slider time and not yet resolved)
-  const activeIncidents = useMemo(() => {
+  const mapIncidents = useMemo(() => {
     if (!allIncidents.length) return [];
-    if (!Number.isFinite(selectedTime)) return allIncidents;
-    return allIncidents.filter(
-      (incident) => selectedTime >= incident.parsedStart && selectedTime <= incident.parsedEnd
-    );
-  }, [allIncidents, selectedTime]);
+    const now = Date.now();
+    const FIVE_MINUTES_MS = 5 * 60 * 1000;
+
+    return allIncidents
+      .filter((inc) => {
+        if (!inc.isResolved) return true;
+        if (inc.parsedResolved) {
+          return (now - inc.parsedResolved) <= FIVE_MINUTES_MS;
+        }
+        return false;
+      })
+      .map((inc) => ({
+        ...inc,
+        isActiveAtTime: !inc.isResolved,
+      }));
+  }, [allIncidents]);
+
+  const activeIncidents = useMemo(() => {
+    return mapIncidents.filter((inc) => inc.isActiveAtTime);
+  }, [mapIncidents]);
 
   function localClusterFor(lat, lon) {
     const targetLat = Number(lat);
@@ -344,7 +349,7 @@ export default function App() {
 
   async function handleCalculateDiversion(incident) {
     setError("");
-    setSelectedName(incident.id || "New Incident");
+    setSelectedName(incident.id || "Live Incident");
     setDeploymentResult(null);
     clearRoute();
     try {
@@ -357,7 +362,7 @@ export default function App() {
 
   async function handleRecommendDeployment(incident) {
     setError("");
-    setSelectedName(incident.id || "New Incident");
+    setSelectedName(incident.id || "Live Incident");
     try {
       await runDeployment(incident);
     } catch (err) {
@@ -368,7 +373,7 @@ export default function App() {
 
   async function handleFindSimilarEvents(incident) {
     setError("");
-    setSelectedName(incident.id || "New Incident");
+    setSelectedName(incident.id || "Live Incident");
     setStatus(`Searching historical matches for ${incident.id || "this incident"}...`);
     setSimilarEventsResult(null);
     try {
@@ -384,6 +389,36 @@ export default function App() {
       setStatus("");
     } catch (err) {
       setError(`Could not find similar incidents: ${err.message}`);
+      setStatus("");
+    }
+  }
+
+  async function handleResolveIncident(incidentToResolve) {
+    setError("");
+    setStatus(`Resolving incident ${incidentToResolve.id}...`);
+    try {
+      if (incidentToResolve.id) {
+        await resolveIncident(incidentToResolve.id);
+      }
+      const resolvedNow = Date.now();
+      setAllIncidents((prev) =>
+        prev.map((item) => {
+          if (item.id === incidentToResolve.id) {
+            return {
+              ...item,
+              status: "resolved",
+              isResolved: true,
+              parsedResolved: resolvedNow,
+              isActiveAtTime: false,
+            };
+          }
+          return item;
+        })
+      );
+      handleClearAll();
+      setStatus(`Incident ${incidentToResolve.id} resolved. (Visible in Red for 5 min cooldown)`);
+    } catch (err) {
+      setError(`Failed to resolve incident: ${err.message}`);
       setStatus("");
     }
   }
@@ -408,34 +443,68 @@ export default function App() {
     setError("");
     setSubmittingForm(true);
 
-    const manualIncident = {
-      ...form,
-      id: "Manual Entry",
-      latitude: Number(form.lat),
-      longitude: Number(form.lon),
-      start_datetime: new Date().toISOString(),
-      parsedStart: Date.now() - 60000,
-      parsedEnd: Date.now() + 7200000,
-    };
+    const lat = Number(form.lat);
+    const lon = Number(form.lon);
 
-    if (!Number.isFinite(manualIncident.latitude) || !Number.isFinite(manualIncident.longitude)) {
-      setError("Please enter valid Latitude and Longitude values.");
+    if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+      setError("Please click on the map to choose a location.");
       setSubmittingForm(false);
       return;
     }
 
-    setTemporaryIncident(manualIncident);
-    setSelectedName("Manual Entry");
     try {
-      await Promise.all([
-        runDiversion(manualIncident, localClusterFor(manualIncident.latitude, manualIncident.longitude)),
-        runDeployment(manualIncident),
-      ]);
-      setForm(defaultForm);
+      setStatus("Saving new live incident...");
+      const res = await createIncident({
+        lat,
+        lon,
+        event_type: form.event_type,
+        event_cause: form.event_cause,
+        priority: form.priority,
+        veh_type: form.veh_type,
+        requires_road_closure: form.requires_road_closure,
+        corridor: form.corridor,
+        junction: form.junction,
+        zone: form.zone,
+        description: form.description,
+      });
+
+      if (res.status === "success" && res.incident) {
+        const nowMs = Date.now();
+        const createdIncident = {
+          ...res.incident,
+          latitude: lat,
+          longitude: lon,
+          parsedStart: nowMs,
+          parsedResolved: null,
+          status: "open",
+          isResolved: false,
+          isActiveAtTime: true,
+          stableKey: `live-${res.incident.id || nowMs}`,
+        };
+
+        // Immediate map update
+        setAllIncidents((prev) => [createdIncident, ...prev]);
+        setSelectedName(createdIncident.id);
+        setSelectedTarget({ lat, lon });
+        setForm(defaultForm);
+        setFormOpen(false);
+        setSubmittingForm(false);
+        setStatus("Incident active. Computing routes and deployment...");
+
+        // Asynchronous non-blocking calculations
+        runDiversion(createdIncident, [createdIncident]).catch((err) => console.warn("Diversion warning:", err));
+        runDeployment(createdIncident)
+          .then(() => setStatus(""))
+          .catch((err) => {
+            console.warn("Deployment warning:", err);
+            setStatus("");
+          });
+      } else {
+        throw new Error(res.message || "Failed to persist incident.");
+      }
     } catch (err) {
       setError(`Could not add incident: ${err.message}`);
       setStatus("");
-    } finally {
       setSubmittingForm(false);
     }
   }
@@ -529,7 +598,6 @@ export default function App() {
     setRouteEnd(null);
     setSelectedTarget(null);
     setSelectedName("");
-    setTemporaryIncident(null);
     setPlannedEventTarget(null);
     clearRoute();
   }
@@ -595,7 +663,6 @@ export default function App() {
 
   return (
     <div className="flex h-screen w-screen flex-col bg-[#f8fafc] text-[#0f172a] overflow-hidden antialiased font-sans">
-      {/* ─── TOP COMMAND BAR ─── */}
       <header className="h-16 px-6 bg-white border-b border-slate-200 flex items-center justify-between shrink-0 shadow-sm z-20">
         <div className="flex items-center gap-2">
           <h1 className="text-base font-extrabold tracking-tight text-slate-900">
@@ -606,12 +673,11 @@ export default function App() {
           </span>
         </div>
 
-        {/* View Switcher */}
+        {/* Dual Tab Navigation (Map & Analytics) */}
         <nav className="flex items-center p-1 rounded-xl bg-slate-100 border border-slate-200">
           {[
             { id: "map", label: "Operations Map" },
             { id: "analytics", label: "Analytics Dashboard" },
-            { id: "audit", label: "Audit Registry" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -627,7 +693,6 @@ export default function App() {
           ))}
         </nav>
 
-        {/* Incident Status Count */}
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
             <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -642,18 +707,12 @@ export default function App() {
         </div>
       </header>
 
-      {/* ─── WORKSPACE CONTENT ─── */}
       {currentView === "analytics" ? (
         <main className="flex-1 w-full bg-[#f8fafc] overflow-hidden p-6">
           <AnalyticsPanel startDate={minTime} endDate={selectedTime} />
         </main>
-      ) : currentView === "audit" ? (
-        <main className="flex-1 w-full bg-[#f8fafc] overflow-hidden p-6">
-          <AuditDashboard />
-        </main>
       ) : (
         <div className="flex flex-1 min-h-0 w-full overflow-hidden">
-          {/* LEFT OPERATOR CONTROLS */}
           <aside className="w-80 bg-white border-r border-slate-200 shrink-0 flex flex-col z-10">
             <div className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4">
               <TimelineScrubber
@@ -706,7 +765,6 @@ export default function App() {
             </div>
           </aside>
 
-          {/* CENTER INTERACTIVE LEAFLET MAP */}
           <main className="relative flex-1 min-w-0 h-full bg-slate-100">
             {status && (
               <div className="absolute top-4 left-4 z-[400] bg-white/95 backdrop-blur px-3.5 py-2 rounded-xl border border-slate-200 shadow-sm text-xs text-slate-700 flex items-center gap-2">
@@ -716,8 +774,7 @@ export default function App() {
             )}
 
             <MapView
-              incidents={activeIncidents}
-              temporaryIncident={temporaryIncident}
+              incidents={mapIncidents}
               plannedEventTarget={plannedEventTarget}
               selectedTarget={selectedTarget}
               radiusKm={radiusKm}
@@ -727,23 +784,17 @@ export default function App() {
               onCalculateDiversion={handleCalculateDiversion}
               onRecommendDeployment={handleRecommendDeployment}
               onFindSimilarEvents={handleFindSimilarEvents}
+              onResolveIncident={handleResolveIncident}
               routeMode={routeMode}
               routeStart={routeStart}
               routeEnd={routeEnd}
               routeResult={routeResult}
               patrolRouteResult={patrolRouteResult}
-              onTargetSelect={(incident) => {
-                if (!routeMode && !patrolRouteResult) {
-                  handleCalculateDiversion(incident);
-                  handleRecommendDeployment(incident);
-                }
-              }}
               onRoutePlanClick={handleRoutePlanClick}
               selectedPathIndex={selectedPathIndex}
             />
           </main>
 
-          {/* RIGHT INTELLIGENCE / RESULTS PANEL */}
           <aside className="w-96 bg-white border-l border-slate-200 shrink-0 flex flex-col z-10">
             <div className="flex-1 overflow-y-auto custom-scrollbar p-4">
               <DiversionResultsPanel
