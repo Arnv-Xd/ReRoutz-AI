@@ -1,15 +1,3 @@
-id,event_type,latitude,longitude,endlatitude,endlongitude,address,end_address,event_cause,requires_road_closure,start_datetime,end_datetime,status,authenticated,modified_datetime,description,veh_type,corridor,priority,zone,junction,resolved_datetime
-EVT1787520633,unplanned,12.981687,77.570472,12.981687,77.570472,unknown,,traffic_jam,False,2026-08-24 03:00:33+00,,open,yes,2026-08-24 03:00:33+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,
-EVT1787520665,unplanned,12.996951,77.584763,12.996951,77.584763,unknown,,traffic_jam,False,2026-08-24 03:01:05+00,2026-08-24 03:45:48+00,resolved,yes,2026-08-24 03:01:05+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,2026-08-24 03:45:48+00
-EVT1787520767,unplanned,13.001842,77.568326,13.001842,77.568326,unknown,,traffic_jam,False,2026-08-24 03:02:47+00,,open,yes,2026-08-24 03:02:47+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,
-EVT1787523949,unplanned,12.987629,77.567768,12.987629,77.567768,unknown,,traffic_jam,False,2026-08-24 03:55:49+00,2026-08-24 04:01:49+00,resolved,yes,2026-08-24 03:55:49+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,2026-08-24 04:01:49+00
-EVT1787524298,unplanned,13.002792,77.575568,13.002792,77.575568,unknown,,traffic_jam,False,2026-08-24 04:01:38+00,,open,yes,2026-08-24 04:01:38+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,
-EVT1787525233,unplanned,12.99125,77.566534,12.99125,77.566534,unknown,,traffic_jam,False,2026-08-24 04:17:13+00,,open,yes,2026-08-24 04:17:13+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,
-EVT1787525351,unplanned,12.993101,77.567832,12.993101,77.567832,unknown,,traffic_jam,False,2026-08-24 04:19:11+00,,open,yes,2026-08-24 04:19:11+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,
-EVT1787525367,unplanned,12.993174,77.565107,12.993174,77.565107,unknown,,traffic_jam,False,2026-08-24 04:19:27+00,,open,yes,2026-08-24 04:19:27+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,
-EVT1787525627,unplanned,12.984699,77.588153,12.984699,77.588153,unknown,,traffic_jam,False,2026-08-24 04:23:47+00,2026-08-24 04:37:43+00,resolved,yes,2026-08-24 04:23:47+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,2026-08-24 04:37:43+00
-EVT1787526481,unplanned,12.995702,77.585449,12.995702,77.585449,unknown,,traffic_jam,True,2026-08-24 04:38:01+00,2026-08-24 06:09:57+00,resolved,yes,2026-08-24 04:38:01+00,traffic_jam at unknown,unknown,unknown,high,unknown,unknown,2026-08-24 06:09:57+00
-EVT1787526523,unplanned,12.995066,77.578712,12.995066,77.578712,unknown,,traffic_jam,True,2026-08-24 04:38:43+00,,open,yes,2026-08-24 04:38:43+00,traffic_jam at unknown,unknown,unknown,high,unknown,unknown,
-EVT1787529406,unplanned,12.953059,77.536011,12.953059,77.536011,unknown,,traffic_jam,False,2026-08-24 05:26:46+00,2026-08-24 06:01:40+00,resolved,yes,2026-08-24 05:26:46+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,2026-08-24 06:01:40+00
-EVT1787530360,unplanned,12.979984,77.578239,12.979984,77.578239,unknown,,traffic_jam,False,2026-08-24 05:42:40+00,,open,yes,2026-08-24 05:42:40+00,traffic_jam at unknown,unknown,unknown,medium,unknown,unknown,
-EVT1787531906,unplanned,12.96087,77.597766,12.96087,77.597766,unknown,,Accident,False,2026-08-24 06:08:26+00,,open,yes,2026-08-24 06:08:26+00,Accident at unknown,Car,unknown,high,unknown,unknown,
+version https://git-lfs.github.com/spec/v1
+oid sha256:e8e796627f4c5d39449f4525ef26e4da9d80db54e866035f345c9da2128c56aa
+size 3912
