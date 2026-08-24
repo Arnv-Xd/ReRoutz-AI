@@ -7,12 +7,10 @@ import {
   resolveIncident,
   predictDeploymentCluster,
   findSimilarIncidents,
-  planEvent,
   optimizePatrolRoute,
 } from "./api/client.js";
 import DiversionResultsPanel from "./components/DiversionResultsPanel.jsx";
 import IncidentForm from "./components/IncidentForm.jsx";
-import PlanEventForm from "./components/PlanEventForm.jsx";
 import MapView from "./components/MapView.jsx";
 import RadiusSlider from "./components/RadiusSlider.jsx";
 import RoutePlannerPanel from "./components/RoutePlannerPanel.jsx";
@@ -27,18 +25,6 @@ const defaultForm = {
   priority: "medium",
   veh_type: "unknown",
   requires_road_closure: false,
-  corridor: "unknown",
-  junction: "unknown",
-  zone: "unknown",
-  description: "",
-};
-
-const defaultPlanEventForm = {
-  lat: "",
-  lon: "",
-  event_type: "festival",
-  expected_duration_hours: "4",
-  planned_date_time: "",
   corridor: "unknown",
   junction: "unknown",
   zone: "unknown",
@@ -114,6 +100,7 @@ function getPaddedBoundingBox(a, b, paddingRatio = 0.3, minPaddingKm = 0.5) {
 
   const latSpan = maxLat - minLat;
   const lonSpan = maxLon - minLon;
+
   const avgLat = (minLat + maxLat) / 2;
   const kmPerDegLat = 111.0;
   const kmPerDegLon = 111.0 * Math.cos((avgLat * Math.PI) / 180);
@@ -213,12 +200,6 @@ export default function App() {
   const [submittingForm, setSubmittingForm] = useState(false);
   const [selectedPathIndex, setSelectedPathIndex] = useState(null);
 
-  const [planEventOpen, setPlanEventOpen] = useState(false);
-  const [planEventForm, setPlanEventForm] = useState(defaultPlanEventForm);
-  const [plannedEventResult, setPlannedEventResult] = useState(null);
-  const [plannedEventTarget, setPlannedEventTarget] = useState(null);
-  const [submittingPlanEvent, setSubmittingPlanEvent] = useState(false);
-
   const [routeMode, setRouteMode] = useState(false);
   const [routeStart, setRouteStart] = useState(null);
   const [routeEnd, setRouteEnd] = useState(null);
@@ -256,22 +237,24 @@ export default function App() {
 
   const mapIncidents = useMemo(() => {
     if (!allIncidents.length) return [];
-    const now = Date.now();
     const FIVE_MINUTES_MS = 5 * 60 * 1000;
 
     return allIncidents
       .filter((inc) => {
+        if (inc.parsedStart && inc.parsedStart > selectedTime) {
+          return false;
+        }
         if (!inc.isResolved) return true;
         if (inc.parsedResolved) {
-          return (now - inc.parsedResolved) <= FIVE_MINUTES_MS;
+          return (selectedTime - inc.parsedResolved) <= FIVE_MINUTES_MS;
         }
         return false;
       })
       .map((inc) => ({
         ...inc,
-        isActiveAtTime: !inc.isResolved,
+        isActiveAtTime: !inc.isResolved || (inc.parsedResolved && inc.parsedResolved > selectedTime),
       }));
-  }, [allIncidents]);
+  }, [allIncidents, selectedTime]);
 
   const activeIncidents = useMemo(() => {
     return mapIncidents.filter((inc) => inc.isActiveAtTime);
@@ -425,17 +408,11 @@ export default function App() {
 
   function handleMapClick(point) {
     setForm((current) => ({ ...current, lat: point.lat.toFixed(6), lon: point.lon.toFixed(6) }));
-    setPlanEventForm((current) => ({ ...current, lat: point.lat.toFixed(6), lon: point.lon.toFixed(6) }));
   }
 
   function handleFormChange(event) {
     const { name, value, type, checked } = event.target;
     setForm((current) => ({ ...current, [name]: type === "checkbox" ? checked : value }));
-  }
-
-  function handlePlanEventFormChange(event) {
-    const { name, value } = event.target;
-    setPlanEventForm((current) => ({ ...current, [name]: value }));
   }
 
   async function handleFormSubmit(event) {
@@ -482,7 +459,6 @@ export default function App() {
           stableKey: `live-${res.incident.id || nowMs}`,
         };
 
-        // Immediate map update
         setAllIncidents((prev) => [createdIncident, ...prev]);
         setSelectedName(createdIncident.id);
         setSelectedTarget({ lat, lon });
@@ -491,7 +467,6 @@ export default function App() {
         setSubmittingForm(false);
         setStatus("Incident active. Computing routes and deployment...");
 
-        // Asynchronous non-blocking calculations
         runDiversion(createdIncident, [createdIncident]).catch((err) => console.warn("Diversion warning:", err));
         runDeployment(createdIncident)
           .then(() => setStatus(""))
@@ -509,44 +484,6 @@ export default function App() {
     }
   }
 
-  async function handlePlanEventSubmit(event) {
-    event.preventDefault();
-    setError("");
-    setSubmittingPlanEvent(true);
-    setPlannedEventResult(null);
-    setPlannedEventTarget(null);
-
-    const lat = Number(planEventForm.lat);
-    const lon = Number(planEventForm.lon);
-
-    if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
-      setError("Please enter valid Latitude and Longitude.");
-      setSubmittingPlanEvent(false);
-      return;
-    }
-
-    setSelectedName("Planned Event");
-    setStatus("Assessing event risk and lead time...");
-
-    try {
-      const result = await planEvent({
-        ...planEventForm,
-        lat,
-        lon,
-        expected_duration_hours: Number(planEventForm.expected_duration_hours) || 4.0,
-      });
-      setPlannedEventResult(result);
-      setPlannedEventTarget({ lat, lon });
-      setPlanEventForm(defaultPlanEventForm);
-      setStatus("");
-    } catch (err) {
-      setError(`Event risk check failed: ${err.message}`);
-      setStatus("");
-    } finally {
-      setSubmittingPlanEvent(false);
-    }
-  }
-
   async function handleGeneratePatrolRoute() {
     if (!selectedTarget || !activeIncidents.length) return;
     setIsGeneratingPatrol(true);
@@ -554,27 +491,41 @@ export default function App() {
 
     const startLat = Number(selectedTarget.latitude || selectedTarget.lat);
     const startLon = Number(selectedTarget.longitude || selectedTarget.lon);
+
     const clusterIncidents = localClusterFor(startLat, startLon);
 
-    if (clusterIncidents.length <= 1) {
+    if (clusterIncidents.length < 2) {
+      setError("At least 2 active incidents required in this radius to generate a patrol route.");
       setIsGeneratingPatrol(false);
       return;
     }
 
-    const activeCluster = clusterIncidents.map((i) => ({
-      incident_id: i.id || i.incident_id || "unknown",
-      lat: Number(i.latitude || i.lat),
-      lon: Number(i.longitude || i.lon),
-    }));
-
     const startPoint = {
-      incident_id: selectedTarget.id || selectedTarget.incident_id || "unknown",
+      incident_id: String(selectedTarget.id || selectedTarget.incident_id || "start-node"),
       lat: startLat,
       lon: startLon,
     };
 
+    const otherPoints = clusterIncidents
+      .filter((i) => {
+        const iLat = Number(i.latitude || i.lat);
+        const iLon = Number(i.longitude || i.lon);
+        return Math.abs(iLat - startLat) > 1e-5 || Math.abs(iLon - startLon) > 1e-5;
+      })
+      .map((i) => ({
+        incident_id: String(i.id || i.incident_id || "node"),
+        lat: Number(i.latitude || i.lat),
+        lon: Number(i.longitude || i.lon),
+      }));
+
+    const activeCluster = [startPoint, ...otherPoints];
+
     try {
-      const res = await optimizePatrolRoute({ start_point: startPoint, active_cluster: activeCluster });
+      const res = await optimizePatrolRoute({
+        start_point: startPoint,
+        active_cluster: activeCluster,
+      });
+
       if (res.status === "error") {
         setError(`Could not build patrol route: ${res.message}`);
       } else {
@@ -592,13 +543,11 @@ export default function App() {
     setDiversionResult(null);
     setPatrolRouteResult(null);
     setSimilarEventsResult(null);
-    setPlannedEventResult(null);
     setRouteResult(null);
     setRouteStart(null);
     setRouteEnd(null);
     setSelectedTarget(null);
     setSelectedName("");
-    setPlannedEventTarget(null);
     clearRoute();
   }
 
@@ -673,7 +622,6 @@ export default function App() {
           </span>
         </div>
 
-        {/* Dual Tab Navigation (Map & Analytics) */}
         <nav className="flex items-center p-1 rounded-xl bg-slate-100 border border-slate-200">
           {[
             { id: "map", label: "Operations Map" },
@@ -709,7 +657,7 @@ export default function App() {
 
       {currentView === "analytics" ? (
         <main className="flex-1 w-full bg-[#f8fafc] overflow-hidden p-6">
-          <AnalyticsPanel startDate={minTime} endDate={selectedTime} />
+          <AnalyticsPanel />
         </main>
       ) : (
         <div className="flex flex-1 min-h-0 w-full overflow-hidden">
@@ -748,20 +696,6 @@ export default function App() {
                 mapPoint={form.lat && form.lon ? { lat: Number(form.lat), lon: Number(form.lon) } : null}
                 submitting={submittingForm}
               />
-
-              <PlanEventForm
-                open={planEventOpen}
-                onToggle={() => setPlanEventOpen((value) => !value)}
-                form={planEventForm}
-                onChange={handlePlanEventFormChange}
-                onSubmit={handlePlanEventSubmit}
-                mapPoint={
-                  planEventForm.lat && planEventForm.lon
-                    ? { lat: Number(planEventForm.lat), lon: Number(planEventForm.lon) }
-                    : null
-                }
-                submitting={submittingPlanEvent}
-              />
             </div>
           </aside>
 
@@ -775,7 +709,6 @@ export default function App() {
 
             <MapView
               incidents={mapIncidents}
-              plannedEventTarget={plannedEventTarget}
               selectedTarget={selectedTarget}
               radiusKm={radiusKm}
               diversionResult={diversionResult}
@@ -804,7 +737,6 @@ export default function App() {
                 diversionResult={diversionResult}
                 deploymentResult={deploymentResult}
                 similarEventsResult={similarEventsResult}
-                plannedEventResult={plannedEventResult}
                 patrolRouteResult={patrolRouteResult}
                 isGeneratingPatrol={isGeneratingPatrol}
                 onGeneratePatrolRoute={handleGeneratePatrolRoute}
@@ -815,7 +747,6 @@ export default function App() {
                 onClearDeployment={() => setDeploymentResult(null)}
                 onClearDiversion={() => setDiversionResult(null)}
                 onClearSimilarEvents={() => setSimilarEventsResult(null)}
-                onClearPlannedEvent={() => setPlannedEventResult(null)}
                 onClearPatrolRoute={() => setPatrolRouteResult(null)}
                 onClearPointToPoint={clearRoute}
                 selectedPathIndex={selectedPathIndex}

@@ -1,7 +1,7 @@
 """
 deployment_service.py
 =======================
-EventFlow AI — Stage 2d: FastAPI router for manpower/barricade predictions.
+ReRoutz AI — Stage 2d: FastAPI router for manpower/barricade predictions.
 
 Mount this into your existing app.py (see app_integrated.py for a full
 example) so the diversion engine and the deployment model share one process

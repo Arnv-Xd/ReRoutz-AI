@@ -1,41 +1,58 @@
 import React from "react";
 
 export default function TimelineScrubber({ minTime, maxTime, value, disabled, onChange }) {
-  const hasRange = Number.isFinite(minTime) && Number.isFinite(maxTime) && maxTime > minTime;
+  const hasRange = Number.isFinite(minTime) && Number.isFinite(maxTime) && minTime < maxTime;
+  
+  // Safe display formatting
+  const display = Number.isFinite(value)
+    ? new Date(value).toLocaleString("en-IN", { 
+        month: "short", 
+        day: "numeric", 
+        hour: "2-digit", 
+        minute: "2-digit", 
+        hour12: true 
+      })
+    : "Live Timeline";
 
-  const display =
-    hasRange && Number.isFinite(value)
-      ? new Date(value).toLocaleString("en-IN", {
-          dateStyle: "medium",
-          timeStyle: "short",
-        })
-      : "Loading timeline...";
+  const startLabel = hasRange 
+    ? new Date(minTime).toLocaleDateString("en-IN", { month: "short", day: "numeric" })
+    : "Start";
+
+  const endLabel = hasRange 
+    ? new Date(maxTime).toLocaleDateString("en-IN", { month: "short", day: "numeric" })
+    : "Now";
 
   return (
     <section className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm space-y-3">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900">Time Filter</h2>
-          <p className="text-[11px] text-slate-500">Filter incidents by time</p>
+          <div className="flex items-center gap-1.5">
+            <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+            <h2 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Time Filter</h2>
+          </div>
+          <p className="text-[11px] text-slate-500 mt-0.5">Filter incidents across simulation history</p>
         </div>
-        <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 max-w-[170px] truncate">
+        <span className="shrink-0 rounded-lg bg-emerald-50 border border-emerald-200 px-2.5 py-1 font-mono text-[11px] font-bold text-emerald-800">
           {display}
         </span>
       </div>
 
-      <div className="flex items-center gap-3">
-        <span className="text-[10px] uppercase font-bold text-slate-400">Start</span>
+      <div className="space-y-1.5 pt-1">
         <input
           type="range"
           min={hasRange ? minTime : 0}
           max={hasRange ? maxTime : 100}
-          step={hasRange ? Math.max(60000, Math.floor((maxTime - minTime) / 200)) : 1}
-          value={hasRange && Number.isFinite(value) ? value : hasRange ? maxTime : 100}
+          value={Number.isFinite(value) ? value : hasRange ? maxTime : 100}
           disabled={disabled || !hasRange}
-          onChange={(e) => onChange(Number(e.target.value))}
-          className="flex-1 cursor-pointer"
+          onChange={(event) => onChange(Number(event.target.value))}
+          className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600 disabled:opacity-40 disabled:cursor-not-allowed"
         />
-        <span className="text-[10px] uppercase font-bold text-slate-400">End</span>
+
+        <div className="flex items-center justify-between text-[10px] font-mono font-semibold text-slate-400">
+          <span>{startLabel}</span>
+          <span className="text-[9px] uppercase tracking-wider text-slate-400">Scrub History</span>
+          <span>{endLabel}</span>
+        </div>
       </div>
     </section>
   );
