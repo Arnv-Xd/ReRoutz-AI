@@ -72,7 +72,7 @@
     "test_rmse": 1.3105817125696804,
     "test_r2": 0.8303421029990182,
     "cv_mae_mean": 1.052321362882055,
-    "cv_mae_std": 0.019299245367648172,
+    "cv_mae_std": 0.019299245367648155,
     "target_mean": 10.710767818904865,
     "target_std": 3.270948932871722,
     "top_features": [
@@ -89,7 +89,7 @@
       {
         "feature": "peak_hour_flag",
         "builtin_importance": 0.08364953544227205,
-        "permutation_importance": 0.19930841547272254
+        "permutation_importance": 0.19930841547272252
       },
       {
         "feature": "contains_accident",
@@ -99,7 +99,7 @@
       {
         "feature": "contains_rally",
         "builtin_importance": 0.059394699619426866,
-        "permutation_importance": 0.055880749507852365
+        "permutation_importance": 0.05588074950785238
       },
       {
         "feature": "event_path_distance_km",
@@ -119,12 +119,12 @@
       {
         "feature": "event_type_encoded",
         "builtin_importance": 0.0010780583313660939,
-        "permutation_importance": 0.00021291720176418172
+        "permutation_importance": 0.00021291720176416784
       },
       {
         "feature": "tfidf_safe_accident",
         "builtin_importance": 0.003578059014490501,
-        "permutation_importance": 0.000170704233849725
+        "permutation_importance": 0.00017070423384973887
       },
       {
         "feature": "is_holiday",
@@ -134,17 +134,17 @@
       {
         "feature": "event_cause_encoded",
         "builtin_importance": 0.004530469968800352,
-        "permutation_importance": 0.00015068558858405412
+        "permutation_importance": 0.00015068558858404024
       },
       {
         "feature": "tfidf_safe_vehicle_breakdown",
         "builtin_importance": 0.0007619011818399589,
-        "permutation_importance": 0.00013590868379700916
+        "permutation_importance": 0.00013590868379699528
       },
       {
         "feature": "safe_location_cluster_avg_impact",
         "builtin_importance": 0.003960509587816936,
-        "permutation_importance": 0.00011165186827294393
+        "permutation_importance": 0.00011165186827293005
       },
       {
         "feature": "tfidf_safe_unknown",
@@ -175,7 +175,7 @@
       {
         "feature": "is_major_corridor",
         "builtin_importance": 0.05728053366894617,
-        "permutation_importance": 0.11922710862954694
+        "permutation_importance": 0.11922710862954695
       },
       {
         "feature": "contains_rally",
@@ -185,7 +185,7 @@
       {
         "feature": "event_type_encoded",
         "builtin_importance": 0.02478420814441053,
-        "permutation_importance": 0.040075802907640595
+        "permutation_importance": 0.04007580290764061
       },
       {
         "feature": "severity_encoded",
@@ -195,7 +195,7 @@
       {
         "feature": "tfidf_safe_public_event",
         "builtin_importance": 0.0009149768543922922,
-        "permutation_importance": 0.0010057894051724858
+        "permutation_importance": 0.001005789405172458
       },
       {
         "feature": "safe_corridor_avg_severity",
@@ -210,12 +210,12 @@
       {
         "feature": "day_of_week",
         "builtin_importance": 0.002749118774254493,
-        "permutation_importance": 0.0003282539375753235
+        "permutation_importance": 0.00032825393757530963
       },
       {
         "feature": "corridor_encoded",
         "builtin_importance": 0.0015189176646092832,
-        "permutation_importance": 0.00020002948692100786
+        "permutation_importance": 0.00020002948692099398
       },
       {
         "feature": "tfidf_safe_tree_fall",
